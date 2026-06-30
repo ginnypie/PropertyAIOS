@@ -1,0 +1,37 @@
+{
+  "board": "Tax Year Prep",
+  "description": "Prompts for organising Australian investment property income and expense records before the annual accountant appointment.",
+  "stage": "Stage 3 — Stress-Test (pre-tax appointment)",
+  "cards": [
+    {
+      "id": "tax-year-records-organiser",
+      "title": "Investment Property Records Organiser",
+      "category": "Tax Year Prep",
+      "description": "Organise all investment property income and expense records before the annual tax appointment — so you walk in prepared, not scrambling.",
+      "prompt": "You are an Australian investment property tax preparation assistant. I want to organise my investment property records before my annual accountant appointment.\n\nMY PROPERTY:\n- Property: [suburb, state, type]\n- Ownership: [sole / joint / trust / SMSF]\n- Financial year: [FY ending 30 June 20XX]\n- Property manager: [yes — annual statement received / no — self-managed]\n- Rental income this year: $[amount] (or 'as per PM statement')\n- Loan interest paid this year: $[amount] (or 'need to get from lender')\n- Capital works this year: [describe each item and cost / none]\n- Depreciation schedule: [yes — I have a QS report / no / unsure]\n- Property sold this year: [yes — settlement date XX / no]\n\nPlease return a structured pre-accountant package with these 7 sections:\n1. Rental Income Records — what to collect\n2. Deductible Expense Categories (what's in, what's out, what needs verification)\n3. Capital Improvements vs Maintenance (flag each item I've described for my accountant)\n4. Depreciation Schedule Status\n5. Loan Interest and Finance Costs\n6. CGT Considerations (if applicable)\n7. Package for My Accountant (document checklist + questions to ask)\n\nDISCLAIMER: This is general information and educational preparation only. Tax deductibility depends on individual circumstances and must be confirmed by a registered tax agent. Not tax advice.",
+      "best_for": "Investment property owners who want to organise their records and arrive at their annual tax appointment prepared — not wasting billable time gathering documents",
+      "output_type": "7-section pre-accountant package with document checklist, expense category guide, capital works flags, and questions to ask",
+      "professional_review_note": "All deductibility determinations — especially for capital works and the maintenance vs improvement distinction — must be confirmed by a registered tax agent."
+    },
+    {
+      "id": "capital-works-review",
+      "title": "Capital Works vs Maintenance Classifier",
+      "category": "Tax Year Prep",
+      "description": "Get a preliminary classification of your investment property capital works before taking them to your accountant — and understand the questions to ask.",
+      "prompt": "You are an Australian investment property tax preparation assistant helping me understand the difference between capital improvements and repairs/maintenance for tax purposes.\n\nMY PROPERTY: [suburb, state, type]\nFINANCIAL YEAR: [FY ending 30 June 20XX]\n\nWORKS CARRIED OUT THIS YEAR:\n[List each item with approximate cost — e.g.:\n- New hot water system (like-for-like replacement): $2,200\n- Full kitchen renovation: $28,000\n- Repainted exterior (same colour, same material): $4,500\n- New carpet to replace worn original: $6,800]\n\nFor each item please:\n1. Provide a preliminary classification: likely maintenance (immediately deductible) OR likely capital improvement (depreciate / add to cost base)\n2. Explain the basis for the classification\n3. Flag any items where the classification is unclear and explain what determines it\n4. List the questions to bring to my registered tax agent for each flagged item\n\nIMPORTANT: These are preliminary indicators only — the final determination must be made by a registered tax agent based on the specific facts.\n\nDISCLAIMER: General information only. Not tax advice. All items require confirmation from a registered tax agent before your return is lodged.",
+      "best_for": "Investors who have carried out work on an investment property during the year and want to understand the tax treatment before the accountant appointment",
+      "output_type": "Preliminary classification of each capital work item with explanation and questions for your tax agent",
+      "professional_review_note": "Your registered tax agent makes the final determination on whether each item is maintenance or capital. Bring the receipts and descriptions to the appointment."
+    },
+    {
+      "id": "depreciation-review",
+      "title": "Depreciation Schedule Review",
+      "category": "Tax Year Prep",
+      "description": "Understand your depreciation position and whether a quantity surveyor schedule is worth commissioning for your investment property.",
+      "prompt": "You are an Australian investment property tax preparation assistant. I want to understand the depreciation position for my investment property.\n\nPROPERTY DETAILS:\n- Property: [suburb, state, type]\n- Year built (approximate): [year / unknown]\n- Year I purchased: [year]\n- Purchase type: [new / second-hand / off-the-plan]\n- Current depreciation schedule: [yes — QS report dated XX / no / unsure]\n- Recent capital works or fitout: [describe / none]\n\nPlease return:\n1. Whether Division 43 building allowance is likely to apply (construction date dependent)\n2. Plant and equipment depreciation potential for this property type\n3. The impact of the 2017 budget changes on second-hand property plant and equipment claims\n4. Whether commissioning a QS depreciation schedule is likely to be worthwhile\n5. What a QS schedule costs and how to find a registered quantity surveyor\n6. Questions to ask my registered tax agent about the depreciation position\n\nDISCLAIMER: General information only. Not tax advice. Depreciation deductions must be calculated by a registered quantity surveyor and confirmed by a registered tax agent. Rules changed in May 2017 for second-hand properties.",
+      "best_for": "Property investors who are unsure whether they are claiming all available depreciation, or who have never commissioned a quantity surveyor report",
+      "output_type": "Depreciation eligibility overview, QS schedule cost-benefit assessment, and questions for your tax agent",
+      "professional_review_note": "Depreciation schedules must be prepared by a registered quantity surveyor. Ask your accountant whether commissioning one is cost-effective before the next 30 June."
+    }
+  ]
+}

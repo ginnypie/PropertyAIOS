@@ -1,0 +1,37 @@
+{
+  "board": "Airbnb and Short-Term Rental",
+  "description": "Prompts for analysing short-term rental investment potential, compliance risks, and STR vs long-term rental comparisons for Australian properties.",
+  "stage": "Stage 1–2 — Analyse + Finance",
+  "cards": [
+    {
+      "id": "str-income-model",
+      "title": "STR Income and Expense Model",
+      "category": "Airbnb / Short-Term Rental",
+      "description": "Model the full income and expense picture of running an Australian property as a short-term rental — including break-even occupancy vs long-term rental.",
+      "prompt": "You are an Australian short-term rental investment analyst. I am analysing a property for potential Airbnb or short-term rental use.\n\nPROPERTY DETAILS:\n- Property: [suburb, state, type, beds/baths/sleep capacity]\n- Purchase price: $[amount]\n- Estimated nightly rate: $[amount] (or 'unsure')\n- Estimated peak season rate: $[amount] (if applicable)\n- Estimated annual occupancy: [X%] (or 'unsure')\n- Long-term rental comparison: $[weekly rent] (or 'estimate from current market')\n- Furnishing: [furnished / needs furnishing — estimated cost $X]\n- Management: [self-managed / co-host X% / management company X%]\n- Approximate marginal tax rate: [X%]\n\nPlease return a structured STR analysis with exactly these 7 sections:\n1. STR Income Assumptions (every assumption explicit)\n2. STR Expense Breakdown (platform fee, cleaning, consumables, furnishing amortisation, insurance, management)\n3. STR vs Long-Term Rental Comparison (including break-even occupancy)\n4. Compliance and Legal Risks (AU council day limits, strata rules, STRA registration by state)\n5. Lender Appetite Flags (AU lenders and STR income for serviceability)\n6. Red Flags to Investigate\n7. Questions for Your Professionals\n\nDISCLAIMER: This is general information and educational preparation only. STR income is variable and not guaranteed. Not financial, credit, tax, or legal advice. Verify all compliance requirements with the relevant council, body corporate, mortgage broker, and registered tax agent.",
+      "best_for": "Investors considering purchasing a property for Airbnb use, or landlords thinking about converting an existing long-term rental to short-term",
+      "output_type": "7-section STR analysis including income model, expense breakdown, LTR comparison, and compliance flags",
+      "professional_review_note": "Verify council STRA rules, body corporate by-laws, lender income treatment, and tax deductibility of STR expenses with the relevant professionals before committing to this strategy."
+    },
+    {
+      "id": "str-compliance-check",
+      "title": "STR Compliance Risk Check",
+      "category": "Airbnb / Short-Term Rental",
+      "description": "Check the compliance landscape for a specific property and council area before committing to a short-term rental strategy.",
+      "prompt": "You are an Australian property compliance analyst. I am considering using a property for short-term rental (Airbnb / Stayz / VRBO) and I need to understand the compliance landscape.\n\nPROPERTY DETAILS:\n- Address or suburb and state: [suburb, state]\n- Property type: [house / townhouse / apartment / unit]\n- Strata or freehold: [strata / freehold]\n- Council: [council name if known, or 'unknown']\n\nPlease return:\n1. Known STRA framework for this state (registration, day limits, permit requirements)\n2. Strata and body corporate risk if this is a strata property\n3. Planning and zoning considerations for STR in this location type\n4. Questions to ask the local council before purchase\n5. Questions to ask the body corporate or OC manager (if strata)\n6. Questions to ask a solicitor before exchange\n\nIMPORTANT: Note that council rules and STRA legislation change frequently. All compliance information requires verification with the relevant council and a solicitor — do not rely on general statements as current rules.\n\nDISCLAIMER: General information only. Not legal advice. Verify all compliance requirements with the local council, body corporate, and a licensed solicitor before making any decision.",
+      "best_for": "Investors who want to understand the compliance risks before committing to a short-term rental strategy for a specific property or location",
+      "output_type": "State STRA framework, strata risk summary, planning considerations, and questions for council / body corporate / solicitor",
+      "professional_review_note": "Always verify current STRA rules directly with the local council and a licensed solicitor. Rules change and vary significantly between council areas."
+    },
+    {
+      "id": "str-vs-ltr-decision",
+      "title": "STR vs Long-Term Rental Decision Framework",
+      "category": "Airbnb / Short-Term Rental",
+      "description": "Run a structured comparison of short-term versus long-term rental strategies for a specific property and investor profile.",
+      "prompt": "You are an Australian investment property analyst. I need to decide whether to run this property as a short-term rental or a long-term rental.\n\nPROPERTY DETAILS:\n- Property: [suburb, state, type, beds/baths]\n- Purchase price: $[amount]\n- Estimated STR nightly rate: $[amount]\n- Estimated STR occupancy: [X%]\n- Estimated long-term weekly rent: $[weekly rent]\n- My situation: [I live nearby / I live interstate — affects self-management feasibility]\n- Management preference: [hands-on / want passive income]\n- Main goal: [maximise income / capital growth / passive income / flexibility for personal use]\n\nPlease return a structured decision framework:\n1. Cash flow comparison (STR vs LTR — assumptions explicit, break-even occupancy for STR)\n2. Risk comparison (income volatility, compliance risk, management burden, vacancy risk)\n3. Tax position flags (expenses unique to STR, personal use proration, GST threshold)\n4. Lender impact (borrowing capacity implications of STR vs LTR income)\n5. Lifestyle and management reality check\n6. Decision questions to answer before choosing\n\nDISCLAIMER: General information and educational preparation only. Not financial, tax, credit, or legal advice. Verify income assumptions with local STR data and a local property manager. Verify tax treatment with a registered tax agent.",
+      "best_for": "Investors who are undecided between short-term and long-term rental and want a structured framework before speaking with their broker and accountant",
+      "output_type": "Cash flow comparison, risk comparison, tax flags, lender impact, and structured decision questions",
+      "professional_review_note": "Discuss the STR vs LTR decision with a local property manager, registered tax agent, and mortgage broker before committing — each has insight into income reality, tax implications, and borrowing impact."
+    }
+  ]
+}
