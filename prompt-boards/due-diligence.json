@@ -1,0 +1,27 @@
+{
+  "board": "Due Diligence",
+  "description": "Prompts for running structured due diligence before making an offer or exchanging contracts.",
+  "stage": "Stage 3 — Stress-Test and Diligence",
+  "cards": [
+    {
+      "id": "due-diligence-risk-scan",
+      "title": "Due Diligence Risk Scan",
+      "category": "Due Diligence",
+      "description": "The questions you need answered before you sign anything.",
+      "prompt": "You are an Australian property due diligence analyst. I want to run a structured risk scan on a property before I make an offer or exchange contracts.\n\nPROPERTY: [address / suburb, state, type]\nAGE: [approximate build year]\nSTRATA: [yes / no / unknown]\nCONTRACT / SECTION 32: [available / not yet]\nPRICE: $[amount]\nKNOWN ISSUES: [anything flagged already, or 'none']\n\nPlease return:\n1. Contract and title flags (questions for my solicitor)\n2. Building and pest flags (questions for my inspector)\n3. Strata / body corporate flags (if applicable)\n4. Suburb and zoning flags (check with council)\n5. Finance flags (check with my broker)\n6. Red flags summary table\n7. Pre-exchange due diligence checklist\n\nDISCLAIMER: General information and preparation only. Not legal, financial, or building advice. Do not exchange contracts without independent legal advice from a solicitor or conveyancer.",
+      "best_for": "Buyers and investors who have a property in mind and want to run a structured pre-offer risk check",
+      "output_type": "Due diligence risk report — 7 sections",
+      "professional_review_note": "Contract review requires a qualified solicitor or conveyancer. Building and pest requires an on-site inspector. Finance flags require a licensed mortgage broker."
+    },
+    {
+      "id": "strata-document-review",
+      "title": "Strata Document Review Prep",
+      "category": "Due Diligence",
+      "description": "Prepare the right questions to ask when reviewing a strata report.",
+      "prompt": "You are an Australian property analyst helping me prepare to review a strata or body corporate report. The property is [type, beds, baths] in [suburb, state]. The building has approximately [X] units/lots.\n\nPlease help me understand what to look for and ask about:\n1. Sinking fund — what is a healthy balance for a building this size and age?\n2. Special levies — what triggers them and how do I spot the risk?\n3. Building defect claims — what to look for in minutes and reports\n4. Body corporate insurance — what does it cover and what gaps do I need to insure for?\n5. Bylaws — what restrictions most affect investors or owner-occupiers?\n6. 8 specific questions to ask my solicitor or strata specialist\n\nDISCLAIMER: General education and preparation only. Not legal advice. Strata document review requires a qualified solicitor or strata specialist.",
+      "best_for": "Buyers considering apartments, townhouses, or any strata-titled property",
+      "output_type": "Strata due diligence guide and question list",
+      "professional_review_note": "Always have a qualified solicitor or strata specialist review strata documents before exchanging contracts."
+    }
+  ]
+}

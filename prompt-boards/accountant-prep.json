@@ -1,0 +1,27 @@
+{
+  "board": "Accountant Prep",
+  "description": "Prompts for preparing for property tax conversations with your accountant or registered tax agent.",
+  "stage": "Stage 3 — Stress-Test / Stage 4 — Decide",
+  "cards": [
+    {
+      "id": "accountant-prep-pack",
+      "title": "Accountant Prep Pack",
+      "category": "Accountant Prep",
+      "description": "Walk into your tax agent appointment with the right questions already written.",
+      "prompt": "You are an Australian property tax preparation assistant. I want to prepare for a conversation with my accountant about the tax implications of an investment property.\n\nPROPERTY: [suburb, state, type, year built, $price]\nPURPOSE: [investment — rental]\nOWNERSHIP STRUCTURE (considering): [personal / joint / trust / SMSF / unsure]\nMY TAX RATE: approximately [32.5% / 37% / 45%]\nINCOME TYPE: [PAYG / self-employed]\nOTHER PROPERTIES: [none / describe]\n\nPlease return:\n1. Tax-relevant property facts summary\n2. Likely deductible expenses list (flag each as 'verify with tax agent')\n3. Common non-deductible items to discuss\n4. 10 specific questions for my accountant (negative gearing, depreciation, CGT, ownership, land tax)\n5. Document checklist for the accountant meeting\n\nDISCLAIMER: General information and preparation only — not tax advice. Tax treatment depends on individual circumstances. Seek advice from a registered tax agent.",
+      "best_for": "Investors preparing for their first accountant conversation about a new investment property",
+      "output_type": "Accountant preparation pack — 5 sections",
+      "professional_review_note": "This pack is preparation only. A registered tax agent gives the actual tax advice."
+    },
+    {
+      "id": "cgt-planning-questions",
+      "title": "Capital Gains Tax Planning Questions",
+      "category": "Accountant Prep",
+      "description": "Prepare questions about CGT before speaking to your accountant — especially relevant given proposed 2027 changes.",
+      "prompt": "You are an Australian property tax preparation assistant. I want to prepare questions about capital gains tax before meeting my accountant.\n\nMY SITUATION: I own [describe property/properties, purchase dates, and purpose: investment / PPOR]\nMY CONCERN: [e.g. timing a sale / the proposed 1 July 2027 CGT changes / general CGT planning]\n\nPlease help me understand and prepare questions about:\n1. How CGT is calculated on investment property (cost base, discount, indexation)\n2. The 50% CGT discount — when it applies and the holding period requirement\n3. The proposed CGT changes (if any are relevant to my situation) — current status\n4. Main residence exemption — when and how it applies\n5. 6 specific questions to ask my accountant about my specific CGT position\n\nIMPORTANT: Flag clearly that proposed CGT changes are not yet law and status must be verified.\n\nDISCLAIMER: General information and preparation only — not tax advice. CGT is complex and individual-specific. Seek advice from a registered tax agent.",
+      "best_for": "Investors thinking about timing a sale or wanting to understand the CGT implications of their portfolio",
+      "output_type": "CGT planning education and question list",
+      "professional_review_note": "CGT calculations and planning must be done by a registered tax agent. Proposed law changes require confirmation of current status."
+    }
+  ]
+}

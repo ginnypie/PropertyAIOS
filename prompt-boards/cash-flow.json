@@ -1,0 +1,27 @@
+{
+  "board": "Cash Flow Analysis",
+  "description": "Prompts for modelling investment property cash flow scenarios before speaking with a broker or accountant.",
+  "stage": "Stage 3 — Stress-Test",
+  "cards": [
+    {
+      "id": "cash-flow-stress-test",
+      "title": "Investor Cash Flow Stress Test",
+      "category": "Cash Flow",
+      "description": "Model an investment property's cash flow across base case, rate rise, and vacancy stress scenarios.",
+      "prompt": "You are an Australian property cash flow analyst. I want to stress-test the numbers on an investment property before I speak to my broker or accountant.\n\nPROPERTY: [suburb, state, type]\nPURCHASE PRICE: $[amount]\nLOAN: [80% / 90% LVR], [interest-only / P&I]\nESTIMATED RATE: [X%] (assumption — I will verify)\nESTIMATED WEEKLY RENT: $[X] (assumption — I will verify with a PM)\nMARGINAL TAX RATE: [X%] (for illustrative negative gearing estimate)\n\nPlease return:\n1. Cash Flow Assumptions Summary (with every assumption flagged)\n2. Base Case Cash Flow (pre-tax and post-tax estimate)\n3. P&I vs IO comparison\n4. Stress test: 5 scenarios (base, rate +1%, rate +2%, high vacancy, bear case)\n5. The three biggest assumptions to verify and who to ask\n6. Questions for my broker and accountant\n\nDISCLAIMER: All figures are assumptions only. Not financial, credit, or tax advice. Verify rent with a PM, rate with a broker, and tax position with an accountant.",
+      "best_for": "Investors who want to understand the cash flow picture before speaking to their mortgage broker or accountant",
+      "output_type": "Cash flow model — 6 sections including stress scenarios",
+      "professional_review_note": "Verify rent with a licensed property manager. Verify rate and loan structure with a licensed mortgage broker. Verify tax position with a registered tax agent."
+    },
+    {
+      "id": "borrowing-power-check",
+      "title": "Borrowing Power Reality Check",
+      "category": "Cash Flow",
+      "description": "Understand what a lender actually sees when they assess your borrowing capacity — before you guess a number.",
+      "prompt": "You are an Australian property finance educator. I want to understand what a lender actually looks at when assessing my borrowing capacity — not a simple income multiple.\n\nMY INCOME: gross annual $[X]; type [PAYG / self-employed / rental]; co-borrower [yes $X / no]\nLIABILITIES: HECS $[X]; card limits $[X]; personal loans $[X]; car loan $[X]; existing mortgages $[X]\nLIVING EXPENSES: $[X/month] (or 'use a benchmark')\nTARGET: $[price]; [house/apartment/townhouse]; [state]; [investment/OO]\n\nPlease return:\n1. What a lender sees: assessed income (with shading)\n2. What a lender sees: assessed liabilities\n3. Capacity — five scenarios (base, cards reduced, HECS cleared, combined, stress)\n4. My single biggest lever and how much it moves the number\n5. 6 specific questions to take to my mortgage broker\n\nDISCLAIMER: Educational estimates only — not credit advice or a borrowing assessment. Lenders differ. Verify with a licensed mortgage broker (ACL holder).",
+      "best_for": "Buyers and investors who want to understand their finance position before speaking to a broker",
+      "output_type": "Borrowing capacity framework — 5 sections",
+      "professional_review_note": "These are calibrated starting points only. Actual borrowing capacity requires assessment by a licensed mortgage broker."
+    }
+  ]
+}

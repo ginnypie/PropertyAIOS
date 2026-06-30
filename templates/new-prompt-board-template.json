@@ -1,0 +1,17 @@
+{
+  "board": "[Board Name]",
+  "description": "[One sentence describing this prompt board's purpose]",
+  "stage": "[Stage X — Name]",
+  "cards": [
+    {
+      "id": "card-slug",
+      "title": "[Card Title]",
+      "category": "[Category Name]",
+      "description": "[One sentence describing what this prompt does for the user]",
+      "prompt": "You are [role]. I want to [goal].\n\n[INPUT FIELD 1]: [description]\n[INPUT FIELD 2]: [description]\n\nPlease return:\n1. [Section 1]\n2. [Section 2]\n3. [Section 3]\n\nDISCLAIMER: General information and preparation only. Not [financial / credit / tax / legal] advice.",
+      "best_for": "[Who this is for]",
+      "output_type": "[What the output looks like — sections]",
+      "professional_review_note": "[Who needs to review the output and why]"
+    }
+  ]
+}

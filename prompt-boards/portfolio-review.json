@@ -1,0 +1,17 @@
+{
+  "board": "Portfolio Review",
+  "description": "Prompts for stress-testing your existing investment property portfolio.",
+  "stage": "Stage 3 — Stress-Test",
+  "cards": [
+    {
+      "id": "portfolio-stress-test",
+      "title": "Portfolio Stress Test",
+      "category": "Portfolio Review",
+      "description": "Your portfolio looked different at lower rates. Run it at current rates and through a vacancy scenario.",
+      "prompt": "You are an Australian property portfolio analyst. I want to stress-test my investment property portfolio.\n\nFOR EACH PROPERTY (repeat as needed):\nPROPERTY [1]: [suburb, state, type]; value $[X] (my estimate); loan $[X]; rate [X%]; [IO/P&I]; IO expiry [date/NA]; weekly rent $[X]; annual outgoings $[X]\n\nMY INCOME: $[X] gross; marginal rate [X%]\n\nMY QUESTION: [Can I add another property? / Can I handle a rate rise? / Should I review my structure?]\n\nPlease return:\n1. Portfolio snapshot table\n2. Stress tests: current, rate +1%, rate +2%, vacancy stress, bear case\n3. IO expiry risk (if applicable)\n4. Equity position (estimated — not a valuation)\n5. Portfolio flags\n6. Questions for my broker and accountant\n\nDISCLAIMER: General information and preparation only. Portfolio figures are based on user-provided estimates — not formal valuations. Not financial, credit, or tax advice.",
+      "best_for": "Investors with 2+ properties who want to understand their current portfolio position before speaking to a broker",
+      "output_type": "Portfolio stress test — 6 sections",
+      "professional_review_note": "Equity access and portfolio restructuring require assessment by a licensed mortgage broker and registered tax agent."
+    }
+  ]
+}

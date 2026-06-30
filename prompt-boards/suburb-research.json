@@ -1,0 +1,37 @@
+{
+  "board": "Suburb Research",
+  "description": "Prompts for researching Australian suburbs and areas before inspecting or making offers.",
+  "stage": "Stage 1 — Analyse",
+  "cards": [
+    {
+      "id": "suburb-risk-scan",
+      "title": "Suburb Risk Scanner",
+      "category": "Suburb Research",
+      "description": "Run a structured risk scan on any suburb before you book an inspection.",
+      "prompt": "You are an Australian property suburb research analyst. I want to research [SUBURB, STATE] for [my purpose: investor / owner-occupier / first home buyer]. I am looking at [property type] in the $[min] to $[max] budget range.\n\nPlease return a structured suburb research report with these sections:\n1. Suburb Snapshot\n2. Employment and Economic Base\n3. Infrastructure and Liveability\n4. Supply and Demand Signals\n5. Lender Appetite Flags\n6. Risk Overlays to Verify\n7. Suburb Score Summary\n\nFlag every assumption. Use Australian property terminology. End with 5 specific questions for a local buyer's agent or property manager.\n\nDISCLAIMER: This is general information and educational preparation only — not financial, credit, or investment advice. All signals require verification with current sources and qualified professionals.",
+      "best_for": "Investors and buyers who want a structured first look at a suburb before committing to inspections",
+      "output_type": "Structured research report — 7 sections",
+      "professional_review_note": "Verify suburb signals with a local buyer's agent, property manager, and mortgage broker (for lender appetite)."
+    },
+    {
+      "id": "comparable-sales-review",
+      "title": "Comparable Sales Review",
+      "category": "Suburb Research",
+      "description": "Check whether a listing price is realistic against recent comparable sales in the same suburb.",
+      "prompt": "You are an Australian property analyst reviewing comparable sales. I am looking at a property at [ADDRESS / SUBURB] listed at $[PRICE]. It is a [TYPE, BEDS, BATHS] on approximately [LAND SIZE if applicable].\n\nPlease:\n1. Identify the key characteristics to match in comparable sales\n2. List the comparable sales I should research (suburb, type, beds, recent timeframe)\n3. Explain what adjustments to make for condition, land size, and position\n4. Flag any signals that the asking price may be above or below comparable sales\n5. List 3 questions to ask the selling agent about comparable evidence\n\nASSUMPTION: You do not have access to live data. You are helping me frame what to research.\n\nDISCLAIMER: General information and preparation only. Not a valuation. Verify with a buyer's agent, selling agent, or registered valuer.",
+      "best_for": "Buyers who want to test whether a price guide is realistic before inspecting",
+      "output_type": "Comparable sales framework and questions",
+      "professional_review_note": "A buyer's agent or registered valuer can access and interpret actual comparable sales data."
+    },
+    {
+      "id": "rental-demand-check",
+      "title": "Rental Demand Check",
+      "category": "Suburb Research",
+      "description": "Assess the rental demand signals for a suburb and property type before buying as an investment.",
+      "prompt": "You are an Australian property analyst helping me assess rental demand before purchasing an investment property. The suburb is [SUBURB, STATE]. The property type I am considering is [TYPE, BEDS, BATHS].\n\nPlease return:\n1. Demand signals for this suburb and property type (tenant profile, seasonal patterns)\n2. Vacancy rate signals to investigate\n3. Rental yield range signal for this property type in this suburb\n4. New supply risk (development pipeline signals)\n5. Questions to ask a local property manager before relying on any rental assumptions\n\nDISCLAIMER: General information and preparation only. Rental assumptions require verification with a local property manager. Not financial or investment advice.",
+      "best_for": "Investors who want to understand the rental demand picture before committing to a suburb",
+      "output_type": "Rental demand analysis and property manager questions",
+      "professional_review_note": "Always get a formal rental appraisal from a licensed property manager before using any rent figure in financial modelling."
+    }
+  ]
+}

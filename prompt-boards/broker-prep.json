@@ -1,0 +1,27 @@
+{
+  "board": "Broker Prep",
+  "description": "Prompts for preparing a structured mortgage broker meeting briefing pack.",
+  "stage": "Stage 4 — Decide and Act",
+  "cards": [
+    {
+      "id": "broker-meeting-prep",
+      "title": "Broker Meeting Preparation Pack",
+      "category": "Broker Prep",
+      "description": "Walk into your broker conversation knowing exactly what to ask.",
+      "prompt": "You are an Australian property finance preparation assistant. I want to prepare for my mortgage broker meeting.\n\nMY INCOME: $[X] gross annual; type [PAYG / self-employed / other]; co-borrower [yes $X / no]\nLIABILITIES: HECS $[X]; card limits $[X]; [other loans]\nDEPOSIT: $[X] available\nPROPERTY: [suburb, state, type, $price, investment/OO]\nLVR TARGET: [80% / 90%]\nLOAN TYPE: [IO / P&I / unsure]\n\nPlease return:\n1. Document checklist for the broker meeting\n2. My financial summary (one page the broker can read)\n3. 10 specific questions to ask my broker (3 about my profile, 2 about this property, 3 about loan structure, 2 about process)\n4. Any flags from my profile to raise proactively\n5. What to look for in a good broker conversation\n\nDISCLAIMER: This is preparation and general information only — not credit advice. Seek advice from the holder of an Australian Credit Licence.",
+      "best_for": "Anyone preparing for their first (or next) mortgage broker conversation",
+      "output_type": "Broker meeting preparation pack — 5 sections",
+      "professional_review_note": "This pack is the agenda for the conversation — not the outcome. A licensed mortgage broker gives the actual credit advice."
+    },
+    {
+      "id": "loan-structure-questions",
+      "title": "Loan Structure Questions",
+      "category": "Broker Prep",
+      "description": "Prepare the right questions about loan structure before you speak to a broker.",
+      "prompt": "You are an Australian property finance educator. I want to prepare questions about loan structure before meeting my mortgage broker.\n\nMY SITUATION: [investor / owner-occupier]; income $[X]; deposit $[X]; target property $[price]; [state]\nCURRENT MARKET CONTEXT: [fixed rates / variable rates / unsure which to focus on]\n\nPlease help me understand and prepare questions about:\n1. Fixed vs variable vs split — when each makes sense\n2. Interest-only vs principal and interest — trade-offs for my situation\n3. Offset account — how it works and what to look for\n4. Redraw vs offset — the practical difference\n5. 6 specific questions to ask my broker about structure\n\nDISCLAIMER: General education only — not credit advice. Loan structure depends on your individual circumstances. Your broker will give the actual recommendation.",
+      "best_for": "Buyers who want to understand loan structure concepts before their broker meeting",
+      "output_type": "Loan structure education and question list",
+      "professional_review_note": "Loan structure decisions should be made with your licensed mortgage broker based on your specific circumstances."
+    }
+  ]
+}

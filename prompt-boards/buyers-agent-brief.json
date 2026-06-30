@@ -1,0 +1,17 @@
+{
+  "board": "Buyer's Agent Brief",
+  "description": "Prompts for creating a structured buyer's agent brief and preparing for buyer's agent conversations.",
+  "stage": "Stage 2 — Finance / Stage 4 — Decide",
+  "cards": [
+    {
+      "id": "buyers-agent-brief-generator",
+      "title": "Buyer's Agent Brief Generator",
+      "category": "Buyer's Agent",
+      "description": "Brief a buyer's agent properly so they search for the right property, not a generic one.",
+      "prompt": "You are an Australian property search brief writer. I want to create a structured brief to give to a buyer's agent.\n\nMY PROFILE: [investor / owner-occupier / first home buyer]\nBUDGET: $[max] — [finance confirmed / estimated / speaking to broker]\nLOCATION: [target suburbs or areas, ranked by preference]\nPROPERTY TYPE: [house / townhouse / apartment]\nCONFIGURATION: [beds / baths / parking — minimum and preferred]\nPURPOSE: [owner-occupied / investment]\nMUST-HAVES: [list 3-5 non-negotiables]\nDEAL-BREAKERS: [list anything that would make me walk away]\nTIMELINE: [settlement by X]\nFINANCE STATUS: [pre-approved $X / not yet / speaking to broker]\n\nPlease return:\n1. Buyer brief summary (one page)\n2. Property search criteria (must-haves, preferred, deal-breakers)\n3. Scope of work for the buyer's agent\n4. 7 questions to ask the buyer's agent before engaging them\n5. Red flags to watch for in a buyer's agent\n\nDISCLAIMER: General preparation only. Not a property recommendation or investment advice.",
+      "best_for": "Anyone engaging or considering a buyer's agent",
+      "output_type": "Structured buyer's agent brief — 5 sections",
+      "professional_review_note": "A licensed buyer's agent with a real estate licence in your state provides the search, negotiation, and market expertise."
+    }
+  ]
+}
