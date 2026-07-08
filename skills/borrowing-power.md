@@ -64,28 +64,45 @@ TARGET LVR: [80% / 90% / other]
 Use these explicit formulas so two people modelling the same borrower get the same result:
 
 ```
-assessment rate      = actual interest rate + APRA serviceability buffer (currently ~3.0%)
-credit card cost      = total card LIMIT × 3.8% per month   (notional repayment on the LIMIT, not the balance)
+assessment rate      = actual interest rate + serviceability buffer (~3.0%)
+
+income shading (conservative — count only a portion of non-base income):
+  base PAYG salary   = 100%
+  overtime           = ~85%
+  casual / bonus     = ~80%
+  other variable     = ~50%
+  rental income      = ~85%   (net rental factor)
+tax                  = income tax + 2% Medicare levy
+
+credit card cost      = repayment on the total card LIMIT over 36 months at ~22% p.a.
+                        (≈ 3.8% of the limit per month — on the LIMIT, not the balance)
 HECS/HELP cost        = gross income × income-based repayment %   (reduces net income)
-net monthly income    = after-tax income − HECS/HELP cost
-monthly surplus       = net monthly income − existing commitments − living expenses (floored at HEM)
+net monthly income    = shaded after-tax income − HECS/HELP cost
+gross surplus         = net monthly income − existing commitments − living expenses (floored at HEM)
+net surplus           = gross surplus × (1 − ~5% cash buffer)   (extra conservative haircut)
 borrowing capacity   ≈ the loan whose P&I repayment AT THE ASSESSMENT RATE over ~30 years
-                        consumes the available monthly surplus
+                        consumes the NET surplus
 ```
 
 - **Assessment rate, not actual rate:** lenders test whether you could still pay if rates rose. They add the APRA buffer (~3.0%) to the actual rate and size the loan against that higher repayment. Never omit the buffer.
 - **Credit card limits, not balances:** a card is assessed on its **limit**, because you could draw it fully at any time. A $10,000 limit is treated as a commitment even if the balance is $0. Reducing or closing a limit can lift capacity.
 - **HECS/HELP:** the compulsory repayment is a percentage of income that rises with income. It reduces net income available to service a loan; a large balance matters less than the repayment rate it triggers.
 - **Living expenses floored at HEM:** the Household Expenditure Measure is a benchmark minimum lenders apply. If a borrower's declared expenses are below HEM for their household, the lender substitutes HEM. Declared expenses above HEM are used as-is.
-- **Simplified estimate:** this uses one assessment rate, one term, and one expense floor. Real lender calculators weight rental income, add-backs, negative gearing, and shade certain income types differently — so two lenders can differ by hundreds of thousands of dollars. Always present a range.
+- **Conservative income shading:** only a portion of non-base income counts — base salary 100%, but overtime/casual/bonus and rental are loaded down (commonly 50%–85%). This mirrors compliance-grade broker serviceability calculators, which deliberately under-count variable income.
+- **Extra cash buffer:** after commitments and living expenses, apply a further ~5% haircut to the surplus before sizing the loan. This is what keeps the estimate on the safe side.
+- **Simplified estimate:** this uses one assessment rate, one term, and one expense floor. Real lender calculators weight rental income, add-backs, negative gearing, and shade income types differently — so two lenders can differ by hundreds of thousands of dollars. Always present a range, and lean to the low end.
 - **Other income and position:** Family Tax Benefit (Part A & B) and rental income are counted by *some* lenders (often shaded, and FTB usually only while children are under an age limit) — treat as verify-with-broker, not guaranteed. Savings/shares and superannuation show financial position and may support the deposit, but super is **not** serviceability income unless borrowing through an SMSF.
 
 **Benchmark ranges / notes** (typical AU estimate — verify; policies change):
 
-| Input | Typical value | Note |
+| Input | Typical conservative value | Note |
 |---|---|---|
-| APRA serviceability buffer | ~3.0% | Added to the actual rate — verify current APRA guidance |
-| Credit card notional cost | ~3.8% of limit / month | Assessed on the LIMIT, not the balance |
+| Serviceability buffer | ~3.0% | Added to the actual rate (APRA floor) — verify current guidance |
+| Rental income factor | ~85% counted | Rental shaded down (net rental factor) |
+| Variable income loadings | ~85% / ~80% / ~50% | Overtime / casual-bonus / other — base salary counts 100% |
+| Medicare levy | 2% | Included in the tax calculation |
+| Credit card cost | limit repaid over 36 months @ ~22% p.a. (≈3.8%/mo) | Assessed on the LIMIT, not the balance |
+| Extra cash buffer | ~5% haircut on surplus | Applied before sizing the loan — keeps it conservative |
 | Living-expense floor | HEM benchmark | Used when declared expenses fall below it |
 | Loan term (P&I) | ~30 years | Default unless supplied |
 | Lender variation | Material | Capacity can differ six figures between lenders |
@@ -170,6 +187,7 @@ Every figure in the output is an estimate to verify — nothing is a pre-approva
 
 ## Pairs with
 
+- [Servicing Compliance Check](servicing-compliance-check.md) — an independent, conservative servicing check on a specific loan, for the file
 - [Property Cash Flow](property-cash-flow.md) — model the property once you know your ceiling
 - [Broker Prep](broker-prep.md) — take this range to a licensed broker
 - [Portfolio Review](portfolio-review.md) — how capacity fits across your whole position
