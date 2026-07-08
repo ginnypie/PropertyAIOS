@@ -147,6 +147,10 @@ See [docs/how-to-use-this-template.md](docs/how-to-use-this-template.md) for the
 
 ## Quick start
 
+**Just want to use the skills?** See [docs/getting-started.md](docs/getting-started.md) — install and run PropertyAIOS in Claude in about 5 minutes, no coding.
+
+**Forking it for your own niche?**
+
 1. Fork this repository
 2. Read [docs/how-to-use-this-template.md](docs/how-to-use-this-template.md)
 3. Choose your deployment from [deployment-guides/](deployment-guides/)
