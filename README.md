@@ -6,6 +6,8 @@ PropertyAIOS helps property investors organise research, test assumptions, ident
 
 This repository is a **framework template**. PropertyAIOS is the Australian property investment example. Fork it and adapt it for your niche, country, or investment strategy.
 
+> **The site & this repo:** the free tools at [propertyaios.com.au](https://propertyaios.com.au) are the friendly front-end; **this repo is the engine** — the open-source skills that power them. To run them yourself in Claude (no coding, ~5 min), see **[docs/getting-started.md](docs/getting-started.md)**.
+
 ---
 
 ## What's inside
