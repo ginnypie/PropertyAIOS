@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --cream:#E3DBC8;--ivory:#EDE7D8;--paper:#F5F1E6;--blush:#DCE8E9;--blush-line:#C6DADB;
+  --crimson:#0E7C86;--crimson-deep:#0A5A62;--crimson-soft:#3FA0A8;
+  --char:#0E2A3B;--char-2:#16384B;--gold:#C08A3E;--gold-soft:#D8AE73;
+  --ink:#12232E;--ink-soft:#3A4C57;--ink-body:#2E4049;--ink-faint:#6B7C85;--line:#CBD6D2;--line-soft:#DEE6E1;
+  --serif:"Fraunces",Georgia,serif;--display:"Fraunces",Georgia,serif;
+  --body:"Inter",-apple-system,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}

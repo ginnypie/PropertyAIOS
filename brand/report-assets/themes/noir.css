@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root{
+  --cream:#E6DED1;--ivory:#EFE9E0;--paper:#F7F4EF;--blush:#F0E6E2;--blush-line:#E1D2CC;
+  --crimson:#8A2532;--crimson-deep:#6E1A24;--crimson-soft:#A64B57;
+  --char:#141110;--char-2:#221D1A;--gold:#B8912F;--gold-soft:#D3B15E;
+  --ink:#191512;--ink-soft:#463E38;--ink-body:#332C27;--ink-faint:#77695E;--line:#D8CDBE;--line-soft:#E7DED0;
+  --serif:"Playfair Display",Georgia,serif;--display:"Playfair Display",Georgia,serif;
+  --body:"Manrope",-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
