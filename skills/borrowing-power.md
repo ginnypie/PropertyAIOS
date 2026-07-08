@@ -32,19 +32,30 @@ It is preparation for a broker conversation, not a credit assessment. Every real
 ## Inputs required
 
 ```
-GROSS ANNUAL INCOME(S): $[amount] + type [PAYG / self-employed / rental]
-CO-BORROWER: [yes — gross income $X + type / no]
-EXISTING DEBTS:
-  HECS/HELP BALANCE: $[amount] (drives the income-based repayment %)
-  CREDIT CARD LIMITS: $[total LIMIT — not the balance owing]
-  PERSONAL / CAR LOANS: $[monthly repayment] over [remaining term]
-  EXISTING MORTGAGES: $[balance] + $[monthly repayment]
-DEPENDENTS: [number]
+APPLICANT(S): [name(s)]
+MARITAL STATUS: [single / married / de facto]
+DEPENDANTS: [number and ages]
+EMPLOYMENT: [PAYG / self-employed] + [time in current role / years trading]
+INCOME:
+  PAYG: gross annual income $[amount]
+  SELF-EMPLOYED: taxable income on the last 2 Notices of Assessment $[yr1] / $[yr2]
+  RENTAL / OTHER: $[amount] (label the type)
+CO-BORROWER: [yes — repeat the income lines above / no]
+FAMILY TAX BENEFIT: Part A $[amount] / Part B $[amount] (some lenders count this — verify)
+EXISTING PROPERTY/S: estimated value $[amount each]
+EXISTING MORTGAGE/S: balance $[amount] + [fixed / variable] + monthly repayment $[amount]
+CAR / PERSONAL LOANS: balance $[amount] + monthly repayment $[amount]
+CREDIT CARDS: provider, LIMIT $[total — assessed on the limit] + balance $[amount]
+HECS/HELP BALANCE: $[amount] (drives the income-based repayment %)
+SAVINGS / SHARES: $[amount] held in bank accounts and/or shares
+SUPERANNUATION BALANCE: $[amount] (shows position; not serviceability income unless borrowing via SMSF)
 MONTHLY LIVING EXPENSES: $[amount] (or "use HEM guide")
 DEPOSIT AVAILABLE: $[amount]
-TARGET INTEREST RATE: [%] (label as assumption — verify with broker)
+TARGET INTEREST RATE: [%] (assumption — verify with broker)
 TARGET LVR: [80% / 90% / other]
 ```
+
+> **Tip:** to collect all of this from a client in one go, use the [borrowing-capacity intake request](../report-templates/borrowing-capacity-intake.md).
 
 ---
 
@@ -67,6 +78,7 @@ borrowing capacity   ≈ the loan whose P&I repayment AT THE ASSESSMENT RATE ove
 - **HECS/HELP:** the compulsory repayment is a percentage of income that rises with income. It reduces net income available to service a loan; a large balance matters less than the repayment rate it triggers.
 - **Living expenses floored at HEM:** the Household Expenditure Measure is a benchmark minimum lenders apply. If a borrower's declared expenses are below HEM for their household, the lender substitutes HEM. Declared expenses above HEM are used as-is.
 - **Simplified estimate:** this uses one assessment rate, one term, and one expense floor. Real lender calculators weight rental income, add-backs, negative gearing, and shade certain income types differently — so two lenders can differ by hundreds of thousands of dollars. Always present a range.
+- **Other income and position:** Family Tax Benefit (Part A & B) and rental income are counted by *some* lenders (often shaded, and FTB usually only while children are under an age limit) — treat as verify-with-broker, not guaranteed. Savings/shares and superannuation show financial position and may support the deposit, but super is **not** serviceability income unless borrowing through an SMSF.
 
 **Benchmark ranges / notes** (typical AU estimate — verify; policies change):
 
@@ -118,6 +130,8 @@ Present a **range — never a single number**:
 
 State: "Real lenders will land somewhere across (and sometimes outside) this range. Only a broker or lender can confirm it."
 
+> **Conservative by design (compliance):** lead with the **Low** figure and treat it as the planning number. The High figure is only a ceiling a favourable lender *might* reach — never a target to borrow up to. When an input is uncertain, round the capacity **down**. The authoritative figure is the broker's own lender serviceability calculator/spreadsheet — this skill defers to it and should never read as more generous than it.
+
 ### 4. WHAT INCREASES / REDUCES YOUR CAPACITY
 Concrete levers, each labelled as indicative:
 
@@ -143,6 +157,8 @@ Every figure in the output is an estimate to verify — nothing is a pre-approva
 
 ## Safety boundaries
 
+- **Bias to the conservative (low) end** — under-estimate rather than over-estimate, and never encourage a borrower toward the top of the range. Over-stating capacity is the compliance risk to avoid
+- Defer to the authority: the broker's actual lender serviceability calculator/spreadsheet is the real number — this skill is only a conservative preparation estimate
 - Never present borrowing capacity as a single certain figure — always a range
 - Never describe this output as a credit assessment, serviceability approval, or pre-approval
 - Never omit the APRA serviceability buffer from the assessment rate
