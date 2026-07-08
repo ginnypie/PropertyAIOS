@@ -6,8 +6,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body);color:var(--ink-body);font-size:13px;line-height:1.55;-webkit-font-smoothing:antialiased}
 em{font-family:var(--serif);font-style:italic;color:var(--crimson);font-size:1.05em}
-.page{width:210mm;min-height:297mm;background:var(--paper);position:relative;overflow:hidden;page-break-after:always}
-.page:last-child{page-break-after:auto}
+.page{width:210mm;height:297mm;background:var(--paper);position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
 .pad{padding:20mm 18mm}
 h2{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);font-weight:600}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);font-weight:600}
