@@ -24,6 +24,8 @@ All outputs are summaries based on the data provided. All deductibility determin
 - Property File: CASH-FLOW ASSUMPTIONS (quarterly actuals updated)
 - Property File: RED FLAGS (GST threshold, apportionment, capital items flagged)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a Property File or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -38,9 +40,12 @@ INCOME:
 - Gross platform payouts received: $[total]
 - Platform/host fees deducted by platform: $[total] (from payout statements)
 - Net payouts into bank: $[total]
-- Nights booked: [number]
-- Nights available for rent (advertised/listed): [number]
-- Nights blocked (personal use or unlisted): [number]
+- Nights booked (available AND rented): [number]
+- Nights available but not booked (listed, vacant): [number]
+- Nights blocked for personal use (owner/family/friends stayed, no market rent): [number]
+- Nights blocked but NOT personal (owner unlisted for repairs, between-listings, off-market — not private stays): [number]
+
+Note: these four buckets should add up to the total days in the quarter (about 90–92). They are mutually exclusive — a night sits in exactly one bucket.
 
 EXPENSES:
 - Cleaning costs: $[total] ([number] cleans at $[per-clean])
@@ -57,8 +62,10 @@ EXPENSES:
 
 TAX POSITION:
 - Marginal tax rate: [X%]
-- Personal use days: [number]
 - GST registration status: [registered / not registered / unsure]
+- Prior 3 quarters' gross STR turnover (if known, for the rolling 12-month GST test): $[total] (or 'unknown')
+
+Reconciling personal use: the "Nights blocked for personal use" figure above is what drives apportionment — it is the only bucket treated as private. "Nights blocked but NOT personal" (repairs, between-listings, off-market) are not private use; they are generally treated as the property still being held for income purposes, but confirm this with your registered tax agent.
 ```
 
 ---
@@ -74,14 +81,29 @@ Return exactly these 5 sections:
 | Gross platform revenue | $X | From payout statements |
 | Platform/host fees deducted | $X | By platform |
 | Net payouts to bank | $X | Cross-check against bank |
-| Nights booked | X | From bookings |
-| Nights available (advertised) | X | Investor-reported |
-| Nights blocked (personal/unlisted) | X | Investor-reported |
-| Occupancy % | X% | Booked ÷ available |
-| Average nightly rate (ADR) | $X | Net revenue ÷ booked nights |
-| Annualised gross revenue estimate | $X | Quarter × 4 — assumption only |
+| Nights booked (available & rented) | X | From bookings |
+| Nights available but not booked | X | Investor-reported |
+| Nights blocked — personal use | X | Investor-reported |
+| Nights blocked — not personal | X | Investor-reported |
+| Occupancy % | X% | Booked ÷ (booked + available not booked) |
+| Average daily rate (ADR) | $X | (gross platform revenue − platform fees) ÷ booked nights |
+| Rolling 12-month turnover estimate | $X | This quarter + prior 3 quarters (or projected) — assumption only |
 
-**GST flag:** State whether the annualised gross revenue estimate approaches or exceeds the $75,000 GST registration threshold. If it does: flag as HIGH PRIORITY for tax agent.
+**GST flag:** The $75,000 GST registration threshold is tested on ROLLING 12-MONTH gross turnover — the last 12 months' actual turnover PLUS a reasonable projection of the next 12 months — not this single quarter multiplied by 4. Use the rolling estimate above (actual prior quarters where known, projected otherwise). State whether it approaches or exceeds $75,000. If it does, or if it is unclear: flag as HIGH PRIORITY for registered tax agent.
+
+#### How the numbers are worked out
+
+```
+ADR = (gross platform revenue − platform fees) ÷ booked nights
+occupancy % = booked nights ÷ (booked nights + available-not-booked nights) × 100
+rolling 12-month turnover = sum of gross STR turnover over the last 4 quarters
+                            (use actuals where known; project the rest off this quarter)
+apportionment days = booked + available-not-booked + blocked-not-personal
+                     (all "income-producing"; personal-use days excluded)
+income-use % = apportionment days ÷ total days in period × 100
+```
+
+Worked example: gross revenue $12,000, platform fees $1,500, booked 40 nights → ADR = (12,000 − 1,500) ÷ 40 = $262.50. Days in quarter 92: booked 40, available-not-booked 30, blocked-not-personal 12, personal 10 → income-use % = (40 + 30 + 12) ÷ 92 = 89%. (illustration only — verify every input with a registered tax agent.)
 
 ### 2. EXPENSE CATEGORISATION
 
@@ -104,18 +126,25 @@ For CAPITAL items: note that these generally cannot be claimed as immediate dedu
 
 ### 3. PRIVATE-USE APPORTIONMENT
 
-If personal use days were reported:
+Split the whole period into four mutually exclusive buckets, each as a share of total days. Because every day falls into exactly one bucket, the percentages sum to 100%:
 
-| | Days | % of quarter |
-|---|---|---|
-| Available for rent | X | X% |
-| Booked (rented) | X | X% |
-| Blocked (personal use) | X | X% |
-| Total days in quarter | 90–92 | 100% |
+| Day bucket | Days | % of quarter | Income-producing? |
+|---|---|---|---|
+| Available & booked | X | X% | Yes |
+| Available & not booked | X | X% | Yes |
+| Blocked — owner/unlisted (repairs, off-market, not personal) | X | X% | Generally yes — confirm |
+| Blocked — personal use (private stays) | X | X% | No |
+| **Total days in quarter** | **90–92** | **100%** | |
 
-Note that expenses are generally only deductible for the proportion of days the property is genuinely available for rent. Show the apportionment percentage and flag for registered tax agent to confirm.
+```
+each % = bucket days ÷ total days in period × 100
+income-use % = (available&booked + available¬booked + blocked-not-personal) ÷ total days × 100
+personal-use % = personal-use days ÷ total days × 100
+```
 
-If no personal use was reported: state clearly so the accountant can verify.
+Note that expenses are generally only deductible for the proportion of days the property is genuinely available for/used to produce income — personal-use days are excluded. Show the apportionment percentage and flag for the registered tax agent to confirm (including whether "blocked — owner/unlisted" days count as income-producing).
+
+If no personal-use days were reported: state clearly (personal use = 0%, income-use = 100% of held days) so the accountant can verify.
 
 ### 4. QUARTERLY POSITION
 

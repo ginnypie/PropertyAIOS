@@ -25,6 +25,8 @@ All outputs are assumptions and estimates. STR income is highly variable and is 
 - Property File: CASH-FLOW ASSUMPTIONS (STR scenario added)
 - Property File: RED FLAGS (compliance and lender risks added)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -40,6 +42,34 @@ FURNISHING STATUS: [furnished / unfurnished / needs furnishing — estimated cos
 MANAGEMENT TYPE: [self-managed / co-host X% / full STR management company X%]
 TAX POSITION: [approximate marginal tax rate]
 ```
+
+---
+
+## How the numbers are worked out
+
+Use one consistent method so two operators get the same figure.
+
+```
+gross STR revenue = (peak nights × peak ADR) + (standard nights × standard ADR)
+   OR, if only a blend is known:
+gross STR revenue = occupancy% × available nights × blended ADR
+booked nights      = occupancy% × available nights
+turns per year     = booked nights ÷ average length of stay
+total cleaning cost = turns per year × cost per turn   (see cleaning-fee note below)
+break-even occupancy% = LTR net cash flow figure reached by solving:
+   (occ% × available nights × blended ADR × (1 − platform%)) − annual STR expenses = LTR net cash flow
+```
+
+Default assumptions (state them, label each "Assumption — verify"):
+- Available nights: 365 minus owner/blocked nights (default 365 if none stated).
+- Average length of stay: 3 nights (default — verify against local listings).
+- Furnishing useful life for amortisation: 5–7 years (typical AU estimate — verify with accountant).
+
+**Cleaning fees:** guest-paid cleaning fees usually offset the cleaning cost — do not count cleaning as a full expense if guests are separately charged for it (avoid double-counting). Net only the unrecovered portion.
+
+**GST:** platform fees and STR management fees may carry GST implications; STR is a taxable supply (unlike residential long-term rent). Confirm GST registration threshold and input-credit treatment with a registered tax agent.
+
+**Worked example (illustration only — verify every input):** 365 available nights × 60% occupancy = 219 booked nights. Blended ADR $200 → gross $43,800. Platform fee 3% → net ~$42,486. At a 3-night average stay that is ~73 turns; at $120/turn cleaning fully recovered from guests, cleaning nets ~$0. (illustration only — verify every input)
 
 ---
 

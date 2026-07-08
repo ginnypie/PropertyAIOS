@@ -21,6 +21,8 @@ This skill produces a structured portfolio stress test across all properties in 
 
 - Standalone portfolio stress test document (does not write to individual Property Files)
 
+> **Running this standalone:** This skill is self-contained. If you don't have Property Files or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -94,6 +96,13 @@ If IO loans are expiring, this is a key item for your broker conversation.
 
 > Usable equity = (Current value × 80%) - Current loan balance. This is an estimate. A formal valuation and lender assessment are required to access equity.
 
+Add an after-tax holding-cost line using the collected marginal tax rate:
+- Portfolio pre-tax weekly cash flow: +/- $X
+- Estimated tax effect of net rental loss (negative gearing): the pre-tax annual rental loss × marginal tax rate, expressed weekly = $X/week benefit
+- **Estimated after-tax weekly holding cost:** +/- $X
+
+> Assumption — verify with a registered tax agent. Only the interest portion of a P&I loan (not principal) is deductible; the tax benefit applies to genuine rental losses on a property genuinely available for rent, and depends on your actual marginal rate.
+
 ### 5. PORTFOLIO FLAGS
 List the key risks and questions the stress test has surfaced:
 - "IO loan on [property] expiring [date] — raise with broker"
@@ -116,6 +125,36 @@ List the key risks and questions the stress test has surfaced:
 
 ---
 
+## How the numbers are worked out
+
+Use these explicit definitions so two people running the same inputs get the same result.
+
+```
+weekly interest          = loan balance × annual rate ÷ 52
+weekly loan repayment    = weekly interest                        (IO loan)
+                         = amortised payment over remaining term  (P&I loan)
+weekly cost              = weekly loan repayment + weekly outgoings
+                           (weekly outgoings = annual outgoings ÷ 52)
+pre-tax weekly cash flow = weekly rent (net of vacancy) − weekly cost
+per +1% rate sensitivity = total loan balance × 1% ÷ 52          (extra $/week per portfolio)
+```
+
+**IO → P&I reversion:** at IO expiry, re-estimate the repayment by amortising the *remaining* loan balance over the *remaining* loan term (e.g. a 30-year loan with 5 IO years reverts to P&I over the remaining 25 years). Use the loan's current rate unless a revert rate is supplied.
+
+**Today's-date check:** compare each IO expiry date to today. If an expiry date is already in the past, do not treat it as a future risk — surface it as "IO term may have already reverted or been renewed: confirm current loan status and repayment with your lender."
+
+**Benchmark ranges (typical AU estimate — verify):**
+
+| Input | Typical range | Note |
+|---|---|---|
+| Serviceability buffer lenders apply | +2.5% to +3% over rate | APRA guidance — verify current buffer |
+| Usable-equity LVR ceiling | 80% (up to 90% with LMI) | lender-dependent |
+| Vacancy stress allowance | 2–4 weeks/property/year | assumption — verify with property manager |
+
+**Worked example (illustration only — verify every input):** A $500,000 IO loan at 6% → weekly interest = 500,000 × 0.06 ÷ 52 ≈ $577/week. A +1% rate rise adds 500,000 × 0.01 ÷ 52 ≈ $96/week. If weekly rent net of vacancy is $480 and other weekly outgoings are $90, pre-tax weekly cash flow ≈ 480 − (577 + 90) = −$187/week (illustration only — verify every input).
+
+---
+
 ## Safety boundaries
 
 - Never recommend selling a property or restructuring a portfolio
@@ -127,10 +166,9 @@ List the key risks and questions the stress test has surfaced:
 
 ## Pairs with
 
-- ← Cash Flow Stress Test (Skill 04) — used for individual property analysis
-- ← Borrowing Power (Skill 06) — capacity to add to the portfolio
-- → Broker Prep (Skill 29) — prepare for the refinance/equity conversation
-- → Accountant Prep — prepare for the tax and land tax conversation
+- [Property Cash Flow](property-cash-flow.md) — used for individual property analysis
+- [Broker Prep](broker-prep.md) — prepare for the refinance/equity conversation
+- [Accountant Prep](accountant-prep.md) — prepare for the tax and land tax conversation
 
 ---
 

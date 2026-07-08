@@ -6,6 +6,8 @@ PropertyAIOS helps property investors organise research, test assumptions, ident
 
 This repository is a **framework template**. PropertyAIOS is the Australian property investment example. Fork it and adapt it for your niche, country, or investment strategy.
 
+> **The site & this repo:** the free tools at [propertyaios.com.au](https://propertyaios.com.au) are the friendly front-end; **this repo is the engine** — the open-source skills that power them. To run them yourself in Claude (no coding, ~5 min), see **[docs/getting-started.md](docs/getting-started.md)**.
+
 ---
 
 ## What's inside
@@ -33,11 +35,55 @@ PropertyAIOS is designed for **preparation and education only**. It does not pro
 It helps investors:
 
 - Research suburbs with structured, repeatable workflows
+- Build an indicative property **appraisal / value range** from comparable sales, and sanity-check an asking price
 - Model cash flow scenarios before speaking with a broker or accountant
+- Estimate **borrowing power** (conservatively) and run an independent **servicing check** for the file
+- Prepare a full **loan fact-find** and the self-employed **accountant document pack**
 - Run due diligence risk scans before making offers
+- Prepare **capital gains / sale** estimates and tax-year packs
 - Prepare smart questions for mortgage brokers, accountants, buyer's agents, and property managers
 - Organise and review their property portfolio
 - Understand risks in off-the-plan and renovation deals
+
+---
+
+## Skills included
+
+Twenty skills, grouped by workflow. Each is self-contained (runs standalone), shows its working, and ends with the appropriate disclaimer.
+
+**Research & value**
+- `suburb-research` — structured suburb analysis with a bull/bear score
+- `property-appraisal` — indicative value **range** from comparable sales, in a valuation-report layout
+- `comparable-sales` — "is this asking price realistic?" price check
+
+**Cash flow & analysis**
+- `property-cash-flow` — cash-flow model with rate/vacancy/bear-case stress tests
+- `airbnb-investor` — short-stay income model incl. break-even occupancy
+- `str-expense-tracker` — short-stay expense categorisation for tax
+- `renovation-risk` — renovation cost-blowout and profit-test check
+- `portfolio-review` — whole-of-portfolio stress test and equity position
+
+**Finance & lending**
+- `borrowing-power` — indicative, deliberately conservative borrowing-capacity range
+- `servicing-compliance-check` — independent, policy-neutral servicing check for the file (shading, YTD, DTI)
+- `loan-application-prep` — full fact-find incl. objectives & requirements
+- `self-employed-lending-prep` — the accountant document pack, tailored by entity structure
+- `broker-prep` — documents and questions to bring to a broker
+
+**Due diligence & risk**
+- `due-diligence-risk-scan` — pre-offer red-flag scan (jurisdiction-aware)
+- `off-the-plan-risk` — off-the-plan valuation and contract risk
+
+**Tax**
+- `accountant-prep` — the investor↔accountant tax conversation
+- `tax-year-prep` — end-of-year record and deduction pack
+- `capital-gains` — sale planner: cost base, 50% discount, CGT by owner
+
+**Buying & managing**
+- `buyers-agent-brief` — brief and vetting questions for a buyer's agent
+- `property-manager-prep` — rental appraisal and fee-comparison questions
+
+Most skills have a matching command (`commands/`), agent (`agents/`), report template (`report-templates/`), and prompt-board card (`prompt-boards/`). All content follows the [compliance-language standard](docs/compliance-language.md).
 
 ---
 
@@ -103,6 +149,10 @@ See [docs/how-to-use-this-template.md](docs/how-to-use-this-template.md) for the
 
 ## Quick start
 
+**Just want to use the skills?** See [docs/getting-started.md](docs/getting-started.md) — install and run PropertyAIOS in Claude in about 5 minutes, no coding.
+
+**Forking it for your own niche?**
+
 1. Fork this repository
 2. Read [docs/how-to-use-this-template.md](docs/how-to-use-this-template.md)
 3. Choose your deployment from [deployment-guides/](deployment-guides/)
@@ -121,7 +171,7 @@ Nothing in this repository constitutes financial advice, credit advice, tax advi
 
 Always review outputs with appropriately licensed professionals before making decisions.
 
-Builders adapting this framework for commercial use should read [docs/compliance-and-disclaimers.md](docs/compliance-and-disclaimers.md) and get their own legal advice before launching.
+All copy and skill output follows the [compliance-language standard](docs/compliance-language.md) — general information only, never personal advice. Builders adapting this framework for commercial use should read [docs/compliance-and-disclaimers.md](docs/compliance-and-disclaimers.md) and get their own legal advice before launching.
 
 See [disclaimers/](disclaimers/) for reusable disclaimer blocks.
 

@@ -14,12 +14,14 @@ This skill produces a structured renovation risk assessment. It identifies the k
 
 ## Reads from
 
-- Property File: SNAPSHOT, RED FLAGS (from Listing Analysis and Due Diligence)
+- Property File: SNAPSHOT, RED FLAGS (from [Due Diligence Risk Scan](due-diligence-risk-scan.md))
 - Property details: age, type, known condition issues
 
 ## Writes to
 
 - Property File: RED FLAGS (open) — renovation risk flags
+
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
 
 ---
 
@@ -32,7 +34,15 @@ BUDGET FOR RENOVATION: $[amount or "unknown"]
 KNOWN ISSUES: [describe anything visible or flagged in inspection]
 GOAL: [add value to sell / add value to hold / improve to rent at premium / other]
 TIMELINE: [need to be done by X / flexible]
+AFTER-RENOVATION VALUE: $[estimate — verify with a valuer or local agent]
+PURCHASE PRICE: $[amount or "already owned"]
+BUYING COSTS (STAMP DUTY ETC): $[amount or "unknown"]
+HOLDING COSTS DURING WORKS: $[amount or "unknown"]
 ```
+
+> **How to estimate the last two inputs (both are assumptions to verify):**
+> - **Stamp duty and buying costs:** use your state's SRO (State Revenue Office) stamp duty calculator for the purchase price, then add conveyancing and inspection costs. State-specific — do not assume a national figure.
+> - **Holding costs during works** ≈ (monthly loan interest + rates + insurance) × months of works. Longer timelines mean higher holding costs — this is where blowouts compound.
 
 ---
 
@@ -85,14 +95,17 @@ Before starting:
 A simple check to run before committing:
 
 ```
-After-renovation value (estimated):      $[X]
-Less: Purchase price                    -$[X]
-Less: Stamp duty and buying costs       -$[X]
-Less: Renovation budget                 -$[X]
-Less: Holding costs during renovation   -$[X]
-Less: Selling costs (if selling)        -$[X]
-= Estimated profit / equity gain         $[X]
+After-renovation value (estimated):        $[X]
+Less: Purchase price                      -$[X]
+Less: Stamp duty and buying costs         -$[X]
+Less: Renovation budget                   -$[X]
+Less: 20% renovation contingency          -$[X]   (= renovation budget × 0.20)
+Less: Holding costs during renovation     -$[X]
+Less: Selling costs (if selling)          -$[X]
+= Estimated profit / equity gain           $[X]
 ```
+
+The 20% contingency is a structural line, not an optional extra. Run the test with it included; if the deal only works without it, treat that as a red flag. (Illustration only — verify every input.)
 
 > **Important:** The after-renovation value must be verified with a local buyer's agent, real estate agent, or valuer — not assumed. The most common renovation mistake is overcapitalising: spending more on the renovation than the market will pay in return.
 
@@ -118,10 +131,9 @@ Flag any of these if present:
 
 ## Pairs with
 
-- ← Listing Analysis (Skill 01) — initial property red flags
-- ← Due Diligence Risk Scan — structural and permit risks
-- → Cash Flow Stress Test (Skill 04) — model holding costs during renovation
-- → Comparable Sales Review (Skill 23) — verify after-renovation value
+- [Due Diligence Risk Scan](due-diligence-risk-scan.md) — structural and permit risks
+- [Property Cash Flow](property-cash-flow.md) — model holding costs during renovation
+- [Suburb Research](suburb-research.md) — sanity-check the after-renovation value against local medians
 
 ---
 

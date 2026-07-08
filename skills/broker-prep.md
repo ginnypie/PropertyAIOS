@@ -23,6 +23,8 @@ This is preparation material only. The broker provides the credit advice.
 
 - Property File: VERIFY-WITH-A-PRO (broker questions)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -45,7 +47,7 @@ KEY QUESTIONS I ALREADY HAVE: [list anything you know you want to ask]
 Return exactly these 6 sections:
 
 ### 1. WHAT TO BRING TO YOUR BROKER
-A checklist of documents typically required:
+A checklist of documents typically required. Mark any item that does not apply to the user's situation as **N/A** (for example, "rental income" for a first purchase, or "existing mortgage statements" with no current loan) rather than leaving an empty box — this keeps the list honest and shows nothing was missed.
 
 **Income verification:**
 - [ ] Last 2 payslips (PAYG)
@@ -102,9 +104,21 @@ Based on this profile and the Property File, ask your broker:
 9. "What is your estimated timeline from application to pre-approval and formal approval?"
 10. "What could delay my approval? What do you need from me to avoid that?"
 
-### 4. FLAGS TO RAISE (from the Property File)
-If the Property File has open red flags, list them here for the broker conversation:
+**Tailoring — add these questions when the profile triggers them:**
+- If income type includes **self-employed**: "As a sole trader / company director, which lenders assess my income most favourably, and can any lend on one year of returns rather than two? What add-backs do you apply?"
+- If **LVR target ≥ ~88%**: "At this LVR, can the LMI premium be capitalised on top of the loan rather than paid upfront, and how does that change my repayments and total cost?"
 
+### 4. FLAGS TO RAISE (from the Property File)
+If the Property File has open red flags, list them here for the broker conversation.
+
+**No Property File? (the normal standalone case)** Derive the flags directly from the Inputs block, for example:
+- Self-employed or non-PAYG income → "ask which lenders accept [income type] most favourably"
+- LVR target ≥ 88% → "ask about LMI cost and whether it can be capitalised"
+- High card limits or HECS → "ask how these reduce borrowing capacity"
+- Apartment / high-density postcode → "ask about lender LVR caps for this property type"
+- Interest-only preference → "ask which lenders offer it and at what rate premium"
+
+Example flags:
 - [e.g. "High-density postcode — ask about lender LVR caps"]
 - [e.g. "Self-employed income — ask which lenders accept [income type] most favourably"]
 - [e.g. "Strata building over 10 storeys — ask about lender appetite"]
@@ -139,10 +153,9 @@ Questions to ask yourself after the broker meeting:
 
 ## Pairs with
 
-- ← Borrowing Power (Skill 06) — your estimated capacity picture
-- ← Cash Flow Stress Test (Skill 04) — the numbers to discuss with the broker
-- ← Due Diligence Risk Scan — the property flags to raise
-- → Buy, Wait, or Walk Away (Skill 30) — after the broker meeting, make the decision
+- [Cash Flow Stress Test](property-cash-flow.md) — the numbers to discuss with the broker
+- [Due Diligence Risk Scan](due-diligence-risk-scan.md) — the property flags to raise
+- [Suburb Research](suburb-research.md) — the demand picture behind the property
 
 ---
 

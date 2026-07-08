@@ -24,6 +24,8 @@ All outputs are general information only. Tax treatment of individual items depe
 
 - Property File: VERIFY-WITH-A-PRO (tax items flagged for accountant review)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -112,7 +114,10 @@ Never estimate depreciation figures without a QS schedule. These must be prepare
 - If the loan is split between investment and personal use: provide the split details to your accountant
 
 ### 6. CGT CONSIDERATIONS (applicable if property sold this year)
-If settlement occurred this financial year, bring the following to your accountant:
+
+**If the property was NOT sold this year (`PROPERTY SOLD THIS YEAR: no`):** CGT is **N/A for this return** — there is no disposal, so no capital gain or loss to report. Do not calculate anything here. Instead, archive this year's capital-improvement receipts (from Section 3) in a permanent "cost base" file: these receipts increase the future cost base and reduce CGT whenever you eventually sell, and they are easily lost across many years of ownership. Note the item, date, and cost for each.
+
+**If settlement occurred this financial year,** bring the following to your accountant:
 - Original purchase contract and settlement statement
 - All receipts for capital improvements since purchase (these increase the cost base)
 - Current settlement statement and sale contract
@@ -142,6 +147,14 @@ If settlement occurred this financial year, bring the following to your accounta
 3. "What is my total tax position on this property — including any negative gearing offset against my income?"
 4. "Are there any actions I should take before the next 30 June to improve my tax position?"
 5. "Please confirm current legislation status on any CGT changes that may affect my position"
+
+**Audit-substantiation check (the stress-test — could you defend each claim if the ATO asked?):**
+- [ ] Every deduction has a receipt, invoice, or statement behind it — not just a bank line
+- [ ] Rental income reconciles to the PM statement AND to bank deposits (Section 1)
+- [ ] Each capital-works item over ~$300 is documented and flagged, not silently claimed as a repair (Section 3)
+- [ ] Loan interest is supported by the annual loan statement, with any personal-use redraw portion excluded (Section 5)
+- [ ] Periods the property was genuinely available for rent (and any private-use periods) are recorded
+- [ ] If any claim here would be hard to substantiate, note it as a question for your tax agent rather than claiming it unsupported
 
 ---
 
