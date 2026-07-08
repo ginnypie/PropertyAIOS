@@ -131,6 +131,7 @@ Show the step-by-step math (for the record), then note this is an independent ch
 - Report both surplus **and** DTI — a loan can pass one and fail the other.
 - Parameters must be set/approved by the ACL holder or organisation; the defaults here are a conservative starting point, not policy.
 - Never present the result as a lender outcome — only an ACL holder can assess and arrange finance.
+- The formulas here are a transparent, **illustrative** default. A production compliance check should be driven by the organisation's own current, versioned serviceability workbook/calculator (updated when the source updates) — treat that workbook as the authority and this skill as the educational explainer of how it works.
 
 ---
 
