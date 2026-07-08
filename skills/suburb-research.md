@@ -14,12 +14,15 @@ This skill produces a structured suburb analysis covering employment base, infra
 
 ## Reads from
 
-- Investor Profile (from Strategy Agent, if available)
-- Property File: INVESTOR PROFILE section
+- Property File: INVESTOR PROFILE section (optional)
 
 ## Writes to
 
 - Property File: SUBURB & DEMAND section
+
+---
+
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
 
 ---
 
@@ -34,9 +37,22 @@ BUDGET RANGE: $[min] to $[max]
 
 ---
 
+## Data sources — how to populate this
+
+Without live data, this skill produces a **"verify these" scaffold**, not findings. Where you can pull data, name the source and freshness against every figure (e.g. `median $720k — Domain, Jun 2026`). Suggested lookups:
+
+- **Medians, days-on-market, price/rent trends:** CoreLogic, Domain, PropTrack, REA (realestate.com.au)
+- **Vacancy rate:** SQM Research
+- **Population and demographics:** ABS QuickStats
+- **Flood, bushfire, contaminated land, planning overlays:** the relevant state planning portal + the local council's planning/hazard maps
+
+If a figure has no source, label it **Assumption — verify** and do not present it as fact.
+
+---
+
 ## Output contract
 
-Return exactly these 7 sections:
+Return exactly these 8 sections:
 
 ### 1. SUBURB SNAPSHOT
 - State, LGA, postcode
@@ -80,11 +96,19 @@ A simple summary table:
 
 | Factor | Signal | Confidence |
 |---|---|---|
-| Employment diversity | [low/medium/high] | [based on: ...] |
-| Infrastructure | [weak/moderate/strong] | [based on: ...] |
-| Supply pressure | [low/medium/high] | [based on: ...] |
-| Lender appetite | [unrestricted/flagged/restricted] | [verify with broker] |
-| Risk overlays | [none identified/verify X] | [based on: ...] |
+| Employment diversity | [low/medium/high] | [High/Medium/Low — based on: ...] |
+| Infrastructure | [weak/moderate/strong] | [High/Medium/Low — based on: ...] |
+| Supply pressure | [low/medium/high] | [High/Medium/Low — based on: ...] |
+| Lender appetite | [unrestricted/flagged/restricted] | [Low — verify with broker] |
+| Risk overlays | [none identified/verify X] | [High/Medium/Low — based on: ...] |
+
+**Confidence rubric (how to rate each signal):**
+- **High** — backed by a named, current source (dated within ~12 months) from the Data sources list above.
+- **Medium** — inferred from an older or indirect source, or one dataset only; directionally useful but re-check before acting.
+- **Low** — assumption, anecdote, or a domain that needs a licensed professional (e.g. lender appetite, hazard overlays). Treat as a question to answer, not a finding.
+
+### 8. BEAR CASE — WHAT WOULD MAKE THIS SUBURB A POOR FIT
+Required, not optional. State the strongest reasons an investor should walk away or wait — e.g. single-employer dependency, a heavy development pipeline diluting supply, a lender-restricted postcode, a hazard overlay, or thin/soft demand signals. If the data is too thin to judge, say so explicitly rather than skipping this section.
 
 ---
 
@@ -107,10 +131,8 @@ A simple summary table:
 
 ## Pairs with
 
-- → Listing Analysis (Skill 01) — run on specific listings in this suburb
-- → Comparable Sales Review (Skill 23) — are prices in this suburb realistic?
-- → Rental Demand Check (Skill 24) — deepen the investor demand picture
-- → Borrowing Power (Skill 06) — check lender appetite for this postcode
+- → [Due Diligence Risk Scan](due-diligence-risk-scan.md) — deepen the hazard and disclosure checks for a specific property in this suburb
+- → [Property Cash Flow](property-cash-flow.md) — stress-test the numbers once you have a target property here
 
 ---
 

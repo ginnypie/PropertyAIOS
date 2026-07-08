@@ -23,6 +23,8 @@ This is preparation only. The accountant provides tax advice.
 
 - Property File: VERIFY-WITH-A-PRO (tax questions)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -37,6 +39,18 @@ CO-OWNER: [yes — their income $X / no]
 EXISTING PROPERTIES: [none / own PPOR / own X investment properties]
 SPECIFIC CONCERNS: [e.g. proposed CGT changes, depreciation, negative gearing, land tax]
 ```
+
+---
+
+## Tailoring the output
+
+Adapt the boilerplate sections to the inputs — do not emit items that don't apply:
+
+- **Property type:** if the property is a house (not strata-titled), strike the strata/body-corporate and sinking-fund lines from Sections 2 and 3. Keep them only for apartments/townhouses/units.
+- **State:** stamp duty and land tax are state-specific. Name the property's state in Questions 7 and 9, and flag that thresholds, surcharges (e.g. foreign owner), and land-tax aggregation rules differ by state — verify against the relevant State Revenue Office.
+- **Build year and second-hand assets:** adjust the depreciation question by build year. Capital-works (building) deductions generally apply where construction was after 1985 — if the year built is unknown or pre-1985, flag that the deduction may not be available and a quantity surveyor should confirm. For a second-hand residential property, note that plant-and-equipment depreciation on previously used assets is generally restricted (post-2017 rules) — treat this as an "Assumption — verify with your tax agent," not a fact.
+
+All figures and eligibility notes above are general estimates to confirm with a registered tax agent — never presented as certain.
 
 ---
 
@@ -96,6 +110,16 @@ Flag for accountant discussion:
 9. "What is my land tax position in [state] across all my properties? Does this purchase push me over the threshold?"
 10. "Are there any exemptions I should know about for my situation?"
 
+**About substantiation / audit risk** (the stress-test on your claims — could you defend each one if the ATO asked?):
+11. "For each deduction I plan to claim, what records do I need to keep, and for how long? Is anything on my list likely to draw ATO attention?"
+12. "How do I apportion any expense that covers both private and rental use, and what evidence supports that split?"
+13. "Is the property genuinely available for rent for the full period I'm claiming, and how do I document that?"
+
+**If INCOME TYPE includes self-employed** (add these — otherwise skip this group):
+14. "Does any of my business income fall under the Personal Services Income (PSI) rules, and does that change how I should hold or fund this property?"
+15. "Given I'm self-employed, does an ownership or investment structure (trust/company/SMSF) change my tax and asset-protection position versus holding personally?"
+16. "How will this property's interest and holding costs interact with my business income and any serviceability review by a lender?"
+
 ### 5. WHAT TO BRING TO YOUR ACCOUNTANT
 - [ ] Contract of sale (or proposed contract)
 - [ ] Estimated purchase price and stamp duty
@@ -126,9 +150,9 @@ Questions to ask yourself:
 
 ## Pairs with
 
-- ← Cash Flow Stress Test (Skill 04) — the numbers to bring to the accountant
-- ← Listing Analysis (Skill 01) — the property snapshot
-- → Broker Prep (Skill 29) — after tax clarity, finalise finance structure
+- [Property Cash Flow](property-cash-flow.md) — the numbers to bring to the accountant
+- [Broker Prep](broker-prep.md) — after tax clarity, finalise finance structure
+- [Tax Year Prep](tax-year-prep.md) — when it's time to file, not just plan the purchase
 
 ---
 

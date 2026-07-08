@@ -23,19 +23,37 @@ This is preparation for professional due diligence — not a substitute for it.
 
 - Property File: RED FLAGS (open), VERIFY-WITH-A-PRO
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
 
 ```
-PROPERTY: [address / suburb, state, property type]
+PROPERTY: [address / suburb, property type]
+STATE: [VIC / NSW / QLD / SA / WA / TAS / ACT / NT]
 PROPERTY AGE: [approximate build year or decade]
 STRATA / BODY CORPORATE: [yes / no / unknown]
-CONTRACT OR SECTION 32: [available / not yet / attached]
+VENDOR DISCLOSURE DOC: [available / not yet / attached]
 PRICE: $[amount or guide]
 YOUR ROLE: [buyer / investor / first home buyer]
 ANY KNOWN ISSUES: [describe anything you've already flagged]
 ```
+
+**Vendor disclosure terminology is state-specific — use the term for the STATE supplied:**
+
+| State | Vendor disclosure document (verify current name with your solicitor) |
+|---|---|
+| VIC | Section 32 vendor statement |
+| NSW | Contract for sale + s10.7 planning certificate |
+| QLD | Contract + seller disclosure statement |
+| SA | Form 1 vendor statement |
+| WA | Contract + Joint Form of General Conditions disclosures |
+| TAS | Contract + vendor disclosures |
+| ACT | Contract + required documents package (incl. building/pest for houses) |
+| NT | Contract + disclosures |
+
+*Assumption — verify the exact document name and content with a licensed solicitor or conveyancer in the property's state; the above is a typical AU estimate, not legal advice.*
 
 ---
 
@@ -49,7 +67,7 @@ Questions to verify with your solicitor or conveyancer:
 - Easements: drainage, power lines, right of way — on title?
 - Caveats or encumbrances: registered interests limiting use or sale
 - Planning overlays: heritage, flood, vegetation, development restrictions
-- Vendor disclosure: is Section 32 / vendor statement / disclosure statement available and complete?
+- Vendor disclosure: is the state's vendor disclosure document (see the terminology table above for the STATE supplied) available and complete?
 - Outstanding permit or building approval history: any unapproved works?
 - Settlement terms: any unusual conditions — long settlement, lease-back, subject to finance?
 
@@ -93,17 +111,24 @@ Items to verify with your mortgage broker:
 - Are there any APRA or lender restrictions on high-density buildings in this postcode?
 
 ### 6. RED FLAGS SUMMARY
-List all flags identified in a table:
 
-| Flag | Source | Severity | Verify with |
-|---|---|---|---|
-| [flag] | [listing / suburb / contract / inspection] | [low/medium/high] | [professional] |
+Rate every flag with this severity rubric so the table is consistent:
+
+- **High** — could stop the purchase or plausibly cost more than ~$10k to resolve (e.g. structural defect, unapproved works, major special levy, contaminated land). *Assumption — the dollar threshold is a rough guide; verify.*
+- **Medium** — needs a professional to price or investigate before you can size the risk (e.g. damp indicators, easement affecting a planned extension, lender appetite unknown).
+- **Low** — a routine check expected to clear with normal due diligence (e.g. standard drainage easement, minor cosmetic issues).
+
+List all flags identified in a table. For High-severity flags, add a rough "if confirmed" consequence so the flag carries meaning, not just a referral:
+
+| Flag | Source | Severity | If confirmed (rough consequence — estimate, verify) | Verify with |
+|---|---|---|---|---|
+| [flag] | [listing / suburb / contract / inspection] | [low/medium/high] | [rough cost/meaning, or "N/A" for low] | [professional] |
 
 ### 7. DUE DILIGENCE CHECKLIST
 A pre-exchange checklist:
 
 - [ ] Solicitor / conveyancer has reviewed the full contract
-- [ ] Section 32 / vendor statement reviewed and understood
+- [ ] State vendor disclosure document (see terminology table) reviewed and understood
 - [ ] Building and pest inspection commissioned and reviewed
 - [ ] Strata report obtained and reviewed (if applicable)
 - [ ] Finance pre-approval (or subject to finance clause in contract)
@@ -124,11 +149,8 @@ A pre-exchange checklist:
 
 ## Pairs with
 
-- ← Listing Analysis (Skill 01) — first pass red flags
-- ← Suburb Research (Skill 05) — suburb and zoning context
-- → Contract Review Preparation (Skill 21)
-- → Building and Pest Report Analysis (Skill 22)
-- → Broker Prep (Skill 29) — finance flags to raise with your broker
+- [Suburb Research](suburb-research.md) — suburb and zoning context
+- [Broker Prep](broker-prep.md) — finance flags to raise with your broker
 
 ---
 

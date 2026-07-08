@@ -21,6 +21,8 @@ This skill produces a structured buyer's agent brief — a document that clearly
 
 - Standalone document (buyer's agent brief — does not update Property File)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -50,9 +52,11 @@ A one-page summary a buyer's agent can read and act on immediately:
 
 **Who I am:** [archetype — investor / FHB / etc.]
 **What I am looking for:** [property type, config, location]
-**Budget:** $[max] — [finance status]
+**Budget:** $[max] — [finance status] — *(UNVERIFIED — any user-stated budget, target yield, or return figure is an assumption to be evidenced by comparable sales and confirmed with the broker; never present it as accurate)*
 **Timeline:** [settlement by X]
 **Purpose:** [investment / owner-occupied]
+
+> **Finance gate:** If FINANCE STATUS is anything other than "pre-approved" (e.g. "not yet", "speaking to broker"), state clearly in the brief that the buyer's agent is **NOT authorised to make or submit an offer** until finance is confirmed in writing. Search and shortlist only.
 
 ### 2. PROPERTY SEARCH CRITERIA
 **Must-have criteria (non-negotiable):**
@@ -66,7 +70,9 @@ A one-page summary a buyer's agent can read and act on immediately:
 
 **Automatic deal-breakers:**
 - [From inputs]
-- Common deal-breakers to include if not specified: main-road frontage over 60km/h; flood zone; high-tension power lines; known structural defects; properties with unapproved works; high-rise over 8 storeys (investor — lender appetite)
+- Common deal-breakers to include if not specified — apply to ALL property types: main-road frontage over 60km/h; flood zone; high-tension power lines; known structural defects; properties with unapproved works.
+- Apply ONLY when PROPERTY TYPE includes apartment / unit: high-rise over 8 storeys (investor — lender appetite); high owners-corporation / strata levies; unremediated combustible cladding; short-term-letting building restrictions. Do NOT add these to a house-only or land-only brief.
+- Apply ONLY when PROPERTY TYPE includes house / land: no legal road frontage; heritage-overlay restrictions on renovation; easements limiting the buildable area.
 
 ### 3. WHAT I NEED THE BUYER'S AGENT TO DO
 A clear scope of what the buyer's agent is being asked for:
@@ -77,9 +83,13 @@ A clear scope of what the buyer's agent is being asked for:
 - [ ] Flag any properties with known issues before I inspect
 
 **Due diligence:**
-- [ ] Run comparable sales for any property before I make an offer
+- [ ] Run comparable sales for any property before I make an offer (comparable sales are the evidence for any budget or yield figure — do not rely on my stated numbers)
 - [ ] Review the contract before I sign anything (or refer to my solicitor)
 - [ ] Flag any postcode or building restrictions relevant to my finance position
+
+**Profile-specific due diligence (add only the block that matches MY PROFILE / SPECIAL REQUIREMENTS):**
+- *If SMSF:* confirm the property is a single acquirable asset, not to be developed/improved with borrowed SMSF funds; check the fund's trust deed and LRBA (limited recourse borrowing arrangement) permit it; no purchase from or lease to a related party for residential; refer structure to the SMSF's accountant/adviser before any offer.
+- *If first home buyer:* check eligibility and price caps for the relevant state First Home Owner Grant / stamp duty concession / shared-equity or guarantee scheme; confirm owner-occupier and residence-period conditions; flag whether a chosen property (e.g. off-the-plan, land+build) qualifies.
 
 **Negotiation:**
 - [ ] Negotiate the purchase price (or represent at auction if applicable)
@@ -94,6 +104,10 @@ Before engaging them:
 5. "Can you provide references from buyers whose briefs were similar to mine?"
 6. "How many properties per month do you typically shortlist and inspect?"
 7. "What is your process if a property fails due diligence?"
+
+Add only if it matches MY PROFILE:
+- *If SMSF:* "Have you sourced properties for SMSF buyers before, and do you understand the single-acquirable-asset and related-party rules?"
+- *If first home buyer:* "Are you familiar with the current [state] first-home-buyer schemes and their price caps, and can you flag whether a property qualifies?"
 
 ### 5. RED FLAGS IN A BUYER'S AGENT
 Flag these for the user to watch for:
@@ -116,10 +130,9 @@ Flag these for the user to watch for:
 
 ## Pairs with
 
-- ← Strategy Agent (Skill 02) — Investor Profile and target profile
-- ← Suburb Research (Skill 05) — target suburb context
-- → Listing Analysis (Skill 01) — run on properties the buyer's agent shortlists
-- → Due Diligence Risk Scan — for properties you want to inspect
+- [Suburb Research](suburb-research.md) — target suburb context to inform the location ranking
+- [Due Diligence Risk Scan](due-diligence-risk-scan.md) — for properties you want to inspect
+- [Property Cash Flow](property-cash-flow.md) — stress-test the numbers on any shortlisted property
 
 ---
 

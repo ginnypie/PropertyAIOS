@@ -21,6 +21,8 @@ This skill produces a preparation brief for a property manager appointment conve
 
 - Standalone document (property manager brief)
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -33,6 +35,14 @@ MY GOAL: [maximise rent / minimise vacancy / minimise management involvement / c
 ESTIMATED RENT (MY ASSUMPTION): $[/week] (if I have one)
 SPECIAL REQUIREMENTS: [pets allowed / furnished / short-stay considered]
 ```
+
+### Input-branching — add questions based on condition
+
+- **If CURRENT CONDITION is "tenanted":** add — "Am I inheriting the existing lease, and when does it expire?", "What is the current rent versus market?", "Is the bond lodged with the state authority and correctly transferred?", "Are there any rent arrears, disputes, or outstanding maintenance I'm taking on?"
+- **If SPECIAL REQUIREMENTS includes "pets allowed":** add — "Can a pet bond or extra bond be charged in this state, and how much?", "How do you handle pet-related damage claims at end of lease?"
+- **If SPECIAL REQUIREMENTS includes "short-stay considered":** add — "Is short-stay letting permitted by the local council zoning, owners corporation / body corporate rules, and any state STRA registration scheme?", "Do you manage short-stay, and how do fees differ from long-term management?"
+
+*Assumption — verify tenancy, bond, and short-stay rules with a solicitor/conveyancer and the relevant state tenancy authority; they vary by state.*
 
 ---
 
@@ -82,6 +92,29 @@ A simple comparison table for up to 3 property managers:
 | VCAT / tribunal representation | | | |
 | **Annual cost estimate** | | | |
 
+*Assumption — verify every fee against each written management agreement; fees vary by agency and state.*
+
+### How the numbers are worked out
+
+```
+annual management cost ≈ mgmt% × annual rent + letting fee + inspection fees + renewal fee
+annual rent = weekly rent × 52
+```
+
+Worked example: rent $600/week → annual rent $31,200. Management fee 7% → $2,184. Plus a letting fee of ~1 week's rent ($600), two routine inspections at $30 ($60), and a lease renewal fee ($150). Estimated annual management cost ≈ $2,994. (Illustration only — verify every input and fee against the actual agreement.)
+
+---
+
+## How to use this brief
+
+Take these questions to 2–3 property managers, record their answers in the fee comparison table, and compare total annual cost — not just the headline management percentage — before appointing anyone.
+
+**Red flags to watch for:**
+- No written management agreement, or reluctance to share it before you sign
+- Undisclosed or vaguely described fees ("we'll sort that out later")
+- A rental appraisal well above comparable listings with no evidence
+- Unclear maintenance approval threshold or inspection process
+
 ---
 
 ## Safety boundaries
@@ -94,11 +127,12 @@ A simple comparison table for up to 3 property managers:
 
 ## Pairs with
 
-- ← Cash Flow Stress Test (Skill 04) — uses rental appraisal from PM to validate assumptions
-- ← Listing Analysis (Skill 01) — check rent estimate from first-pass against PM appraisal
+- [Property Cash Flow](property-cash-flow.md) — use the rental appraisal from the PM to validate your cash-flow assumptions
 
 ---
 
 ## Disclaimer
 
-> This output is general information and preparation only. Rental appraisals from property managers are estimates and do not guarantee income. Property management fees and processes vary. This output does not constitute financial, legal, or investment advice. Review your management agreement with a solicitor if required.
+> This output is general information and preparation only. It does not constitute financial, credit, tax, legal, or investment advice, and it is not a recommendation to appoint any particular property manager or agency. Rental appraisals provided by property managers are estimates only and do not guarantee rental income. Property management fees, contract terms, tenancy laws, bond rules, and short-stay regulations vary by state and by agency — confirm them independently. Review any management agreement with a licensed solicitor or conveyancer, and confirm the tax treatment of management fees with a registered tax agent before acting.
+>
+> See [disclaimers/general-information.md](../disclaimers/general-information.md) and [disclaimers/not-financial-advice.md](../disclaimers/not-financial-advice.md) for the full disclaimer.

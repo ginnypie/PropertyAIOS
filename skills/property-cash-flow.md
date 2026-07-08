@@ -26,6 +26,10 @@ All outputs are assumptions and estimates. They are preparation for professional
 
 ---
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
+---
+
 ## Inputs required
 
 ```
@@ -38,6 +42,35 @@ ESTIMATED WEEKLY RENT: $[amount] (label as assumption — verify with property m
 TAX POSITION: [approximate marginal tax rate: 32.5% / 37% / 45% — for negative gearing estimates]
 DEPRECIATION: [yes — I have a quantity surveyor estimate / no / unsure]
 ```
+
+---
+
+## How the numbers are worked out
+
+Use these explicit formulas so two people modelling the same property get the same result:
+
+```
+weekly interest        = loan balance × annual rate ÷ 52
+annual interest        = loan balance × annual rate
+gross yield (%)        = annual gross rent ÷ purchase price × 100
+net yield (%)          = (annual gross rent − annual operating costs, before loan interest) ÷ purchase price × 100
+negative-gearing benefit = annual pre-tax rental loss × marginal tax rate
+```
+
+- **P&I loans:** default term = 30 years unless supplied. Only the **interest portion** of a P&I repayment is tax-deductible — the principal portion is not. For interest-only loans the whole repayment is interest.
+- **Negative gearing:** the benefit is an estimate only; add the 2% Medicare levy to the marginal rate as an optional extra if relevant, and note the property must be genuinely available for rent to claim it. Not tax advice — verify with a registered tax agent.
+- **Management fee:** charged as a % of rent actually collected, not of scheduled rent.
+
+**Benchmark ranges** (typical AU estimate — verify with the vendor, council, and insurer; do not treat as fact):
+
+| Cost item | Typical annual range | Note |
+|---|---|---|
+| Council rates | $1,200–$2,500 | Varies by council and land value — verify |
+| Water rates (fixed/supply) | $700–$1,400 | Usage often tenant-paid — verify |
+| Landlord insurance | $1,000–$2,000 | Varies by state, cover, property — verify |
+| Repairs & maintenance | ~0.5%–1.5% of value | Allowance, not a quote — verify |
+
+**Worked example:** $600,000 purchase, 80% LVR = $480,000 loan at 6.0% interest-only. Weekly interest = 480,000 × 0.06 ÷ 52 ≈ **$554/wk**. At $500/wk rent, annual gross rent = $26,000, so gross yield = 26,000 ÷ 600,000 × 100 ≈ **4.3%**. (illustration only — verify every input)
 
 ---
 
@@ -119,10 +152,9 @@ List the three most important assumptions in this model and who can verify them:
 
 ## Pairs with
 
-- ← Listing Analysis (Skill 01) — brings the SNAPSHOT and initial assumptions
-- ← Suburb Research (Skill 05) — for vacancy risk context
-- → Borrowing Power (Skill 06) — can you fund this?
-- → Portfolio Stress Test (Skill 27) — how does this affect your whole portfolio?
+- [Suburb Research](suburb-research.md) — for vacancy risk context
+- [Portfolio Review](portfolio-review.md) — how does this affect your whole portfolio?
+- [Broker Prep](broker-prep.md) — take these numbers to a licensed broker
 
 ---
 

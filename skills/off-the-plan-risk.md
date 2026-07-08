@@ -21,6 +21,8 @@ This skill produces a structured risk analysis for off-the-plan property purchas
 
 - Property File: RED FLAGS (open) — off-the-plan specific flags
 
+> **Running this standalone:** This skill is self-contained. If you don't have a "Property File" or the paired skills listed below, just fill in the Inputs block — that's all this skill needs. The "Reads from" and "Pairs with" references are optional extras, not requirements.
+
 ---
 
 ## Inputs required
@@ -33,6 +35,8 @@ EXPECTED SETTLEMENT: [approximate date or "X months/years"]
 MY PURPOSE: [owner-occupier / investor]
 DEPOSIT PAID: $[amount or "not yet"]
 PRE-APPROVAL STATUS: [pre-approved / not yet / speaking to broker]
+PLANNED LVR: [% you intend to borrow — e.g. 80%. If unknown, state the assumption]
+CASH ON HAND AT SETTLEMENT: $[savings available to cover any shortfall]
 ```
 
 ---
@@ -53,8 +57,25 @@ Plain-English explanation of what the buyer is signing:
 - At settlement, the bank will value the completed property
 - If the property has declined in value since you signed, the bank will lend against the lower valuation — not the contract price
 - You may need to fund the shortfall from your own savings
-- Example: contract price $700k, settlement value $620k, 80% LVR → bank lends $496k, not $560k → you need an extra $64k at settlement
 - **This risk is highest in:** oversupplied inner-city apartment markets; cooling markets; areas with a large pipeline of new stock
+
+**How the numbers are worked out**
+
+Always model the same downside BAND — value holds, −5%, −10% — using the PLANNED LVR from Inputs (do not assume 80% unless that is what was supplied).
+
+```
+bank lends       = settlement valuation × planned LVR
+extra cash needed = (contract price × planned LVR) − bank lends
+                  = (contract price − settlement valuation) × planned LVR
+```
+
+| Scenario | Settlement value | Bank lends (80% LVR) | Extra cash needed at settlement | Assumption — verify with broker + valuer |
+|----------|-----------------|----------------------|--------------------------------|-------------------------------------------|
+| Value holds | $700,000 | $560,000 | $0 | Estimate only |
+| −5% | $665,000 | $532,000 | $28,000 | Estimate only |
+| −10% | $630,000 | $504,000 | $56,000 | Estimate only |
+
+Compare each "extra cash needed" figure against CASH ON HAND AT SETTLEMENT from Inputs to see whether the shortfall is coverable. (Illustration only — verify every input. Contract price $700k, 80% LVR assumed.)
 
 ### 3. DEVELOPER RISK
 Questions to research about the developer:
@@ -66,6 +87,8 @@ Questions to research about the developer:
 
 ### 4. CONTRACT RISK FLAGS
 Questions for your solicitor or conveyancer before signing:
+
+> **State-specific check:** Home-warranty/builders-warranty insurance and sunset-clause law both differ by state (e.g. cover thresholds and exclusions, and the developer's obligations before triggering a sunset clause). Confirm the rules for the property's state with your solicitor — do not assume the interstate position applies.
 
 **Price and specifications:**
 - Is the sunset clause date reasonable? What happens if the developer triggers it?
@@ -123,10 +146,10 @@ Before signing any off-the-plan contract:
 
 ## Pairs with
 
-- ← Suburb Research (Skill 05) — oversupply and demand signals
-- ← Cash Flow Stress Test (Skill 04) — model the investment case
-- → Broker Prep (Skill 29) — finance readiness for OTP settlement
-- → Due Diligence Risk Scan — contract and legal flags
+- [Suburb Research](suburb-research.md) — oversupply and demand signals
+- [Property Cash Flow](property-cash-flow.md) — model the investment case
+- [Broker Prep](broker-prep.md) — finance readiness for OTP settlement
+- [Due Diligence Risk Scan](due-diligence-risk-scan.md) — contract and legal flags
 
 ---
 
