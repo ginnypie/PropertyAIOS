@@ -30,9 +30,17 @@ time (cover · summary · comparables with a value number-line), swappable desig
    produces the value range, subject attributes, and the comparable-sales table — the
    real, sourced data. Do not proceed with invented numbers.
 
-2. **Gather images.** For the subject and each comparable, get a listing photo URL
-   (property.com.au / realestate.com.au) or a local file. URLs are fine — the renderer
-   downloads and inlines them. These are public listing photos, used for research ID.
+2. **Gather images — REQUIRED, do not skip.** Every comparable and the subject MUST
+   have a real photo URL, or the report renders with empty grey boxes. Reliable method:
+   for each property, open its **Domain property-profile** page
+   `https://www.domain.com.au/property-profile/<number>-<street>-<suburb>-<state>-<postcode>`
+   (e.g. `.../9-grimes-place-davidson-nsw-2085`) and take the **`og:image`** meta URL —
+   that is the hero listing photo (a `rimh2.domainstatic.com.au/...` link). realestate.com.au
+   (`i2.au.reastatic.net`) and agent-site photos work too. Use your web/fetch tool to read
+   the page and copy the `og:image`. Put one URL in each comp's `image` field and in the
+   top-level `image` (subject). The renderer downloads and inlines them (jpeg/png/webp all
+   handled). If a property genuinely has no photo, use its street-view or leave `""` — but
+   never leave the whole set empty. These are public listing photos, for research ID only.
 
 3. **Write a data file.** Fill a JSON like `brand/report-assets/example-11-apollo.json`
    with the appraisal output: `address`, `date`, value fields, subject summary, an array

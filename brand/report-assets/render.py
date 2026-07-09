@@ -15,8 +15,29 @@ downloaded/read and inlined as base64 so the PDF is fully self-contained.
 """
 import argparse, base64, json, pathlib, re, subprocess, sys, tempfile, time, urllib.request
 
+import shutil
 HERE = pathlib.Path(__file__).resolve().parent
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+def find_chrome():
+    """Locate Chrome/Chromium/Edge across macOS, Windows and Linux. Falls back to none."""
+    cands = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    ]
+    for name in ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser",
+                 "chrome", "microsoft-edge"):
+        p = shutil.which(name)
+        if p: cands.insert(0, p)
+    for c in cands:
+        if c and pathlib.Path(c).exists():
+            return c
+    return None
+
+CHROME = find_chrome()
 
 def img_uri(src):
     """Return a data: URI for a local path or http(s) URL. Empty on failure."""
@@ -27,7 +48,11 @@ def img_uri(src):
         else:
             p = (src if pathlib.Path(src).is_absolute() else HERE / src)
             data = pathlib.Path(p).read_bytes()
-        return "data:image/jpeg;base64," + base64.b64encode(data).decode()
+        mime = "jpeg"
+        if data[:4] == b"\x89PNG": mime = "png"
+        elif data[:4] == b"RIFF" and data[8:12] == b"WEBP": mime = "webp"
+        elif data[:3] == b"GIF": mime = "gif"
+        return f"data:image/{mime};base64," + base64.b64encode(data).decode()
     except Exception as e:
         print(f"  ! image failed ({src}): {e}", file=sys.stderr)
         return ""
@@ -135,6 +160,11 @@ def main():
     html_path.write_text(html)
     print(f"HTML  -> {html_path}")
 
+    if not CHROME:
+        print("No Chrome/Chromium/Edge found — open the .html above in any browser and "
+              "use Print → Save as PDF (the fonts and images are already embedded).",
+              file=sys.stderr)
+        return
     if out.exists():
         out.unlink()
     profile = tempfile.mkdtemp(prefix="chr-")
