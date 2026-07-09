@@ -128,7 +128,7 @@ Never estimate depreciation figures without a QS schedule. These must be prepare
 - Current settlement statement and sale contract
 - Ownership structure and dates (to determine CGT discount eligibility)
 
-**CGT discount (mid-reform — verify current-year rules):** for disposals **up to 30 June 2027** the 50% discount applies to individuals who owned the property more than 12 months (different rules for trusts/SMSFs/companies). From **1 July 2027** the 50% discount is replaced by cost-base indexation plus a 30% minimum tax for individuals and trusts. Confirm which regime applies to your disposal date. Do not calculate CGT yourself — provide your accountant with the full documentation.
+**CGT discount (mid-reform — verify current-year rules):** for disposals **up to 30 June 2027** the 50% discount applies to individuals who owned the property more than 12 months (different rules for trusts/SMSFs/companies). From **1 July 2027** the 50% discount is replaced by cost-base indexation plus a 30% minimum tax for individuals and trusts. Confirm which regime applies to your disposal date. **Check it live:** if you have web access at run time, confirm the current-year rules at ato.gov.au before stating them. Do not calculate CGT yourself — provide your accountant with the full documentation.
 
 ### 7. PACKAGE FOR YOUR ACCOUNTANT
 
