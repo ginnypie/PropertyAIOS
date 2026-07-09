@@ -1,0 +1,39 @@
+{
+  "address": "9 Grimes Place, Davidson NSW 2085",
+  "date": "9 Jul 2026",
+  "prepared_for": "Virginia Graham",
+  "purpose": "Research / underwrite",
+  "image": "",
+
+  "value_mid": 2200000,
+  "range_low": 2000000,
+  "range_high": 2400000,
+  "last_sale": "Long-held (late 1990s–2000s)",
+  "avm": "Suburb median ~$2.4–2.5m",
+
+  "type": "House", "beds": 4, "baths": 2, "cars": 1, "highlight": "Cul-de-sac",
+  "living": "Unknown — verify", "land": "~800 m²+ (est · verify)", "title_ref": "Unknown — verify",
+  "lga": "Northern Beaches", "zoning": "Low-density residential",
+  "improvements": "Established — condition to verify", "car_accom": "Single garage",
+
+  "reasoning": [
+    "This appraisal uses the <em>direct comparison</em> approach against recent Davidson and same-street sales. Figures are indicative and rely on the comparable evidence overleaf being correct. Grimes Place is a tightly held cul-de-sac of ~15 homes, ~95% owner-occupied.",
+    "The anchor is <b>a 4/2 Davidson house on 754 m²</b> that sold <b>$2.30m (Jan 2026)</b> — the most recent, most configuration-similar evidence. The street brackets the subject: a ceiling at 13 Grimes (5/3/2, $2.64m) and 10 Grimes (6/4/3, $2.78m), clearly superior; a floor confirmed by 19 Grimes ($1.85m, Dec 2020, single garage) pre-boom.",
+    "Two features pull the subject <em>below</em> the $2.30m anchor: <b>single-car accommodation</b> and <b>likely dated condition</b>. A larger block (~800 m²+) and the premium cul-de-sac position offset this. On balance the subject sits a touch under the anchor unless renovated or holding a city outlook — a most-likely read near <b>$2.2m</b>."
+  ],
+  "confidence": "Medium",
+  "confidence_note": "To sharpen: confirm land size & living area (title/contract), internal condition (original vs renovated — the single biggest swing), whether #9 has 1 or 2 car spaces and any district/city view, and pull a CoreLogic 4/2 Davidson sold-comp set <3 months old.",
+  "signature": "PropertyAIOS",
+
+  "comps_summary": "6 sales · same-street weighted",
+  "comps_note": "Suburb median house price ~$2.40–2.53m to Mar 2026, up ~7% YoY. Sources: Domain (Grimes Place street profile & Davidson sold), First National (4 Grimes), propertyvalue.com.au (19 Grimes), Allhomes. Some land sizes/car counts unconfirmed — verify. Not sales-weighted advice.",
+
+  "comparables": [
+    {"ref":"A","address":"Davidson 4/2 · 754 m²","beds":4,"baths":2,"cars":2,"price":2300000,"date":"Jan 2026","line2_label":"Same config","line2":"754 m² · very recent","relation":"Comparable","anchor":true,"image":""},
+    {"ref":"B","address":"13 Grimes Pl, Davidson","beds":5,"baths":3,"cars":2,"price":2640000,"date":"Nov 2025","line2_label":"Same street","line2":"Extra beds · double garage","relation":"Superior","image":""},
+    {"ref":"C","address":"Davidson 4/3 · 902 m²","beds":4,"baths":3,"cars":2,"price":2550000,"date":"Dec 2025","line2_label":"Same suburb","line2":"Extra bath · larger block","relation":"Superior","image":""},
+    {"ref":"D","address":"10 Grimes Pl, Davidson","beds":6,"baths":4,"cars":3,"price":2782000,"date":"Sep 2025","line2_label":"Same street","line2":"Much larger home","relation":"Superior","image":""},
+    {"ref":"E","address":"4 Grimes Pl, Davidson","beds":4,"baths":2,"cars":2,"price":2340000,"date":"Aug 2022","line2_label":"Same street","line2":"Pool · city views · older sale","relation":"Superior","image":""},
+    {"ref":"F","address":"19 Grimes Pl, Davidson","beds":5,"baths":2,"cars":1,"price":1850000,"date":"Dec 2020","line2_label":"Same street","line2":"928 m² · single garage · pre-boom","relation":"Inferior","image":""}
+  ]
+}

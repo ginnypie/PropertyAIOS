@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root{
+  --cream:#E8DFD0;--ivory:#F2EDE4;--paper:#FAF6EE;--blush:#F1E2DC;--blush-line:#E6CFC9;
+  --crimson:#AB2B3C;--crimson-deep:#8F1F2E;--crimson-soft:#C9505F;
+  --char:#1C1A17;--char-2:#262320;--gold:#B08D4C;--gold-soft:#CBB079;
+  --ink:#1A1A1A;--ink-soft:#4A4A4A;--ink-body:#584141;--ink-faint:#7A7368;--line:#D4C9B5;--line-soft:#E5DCC9;
+  --serif:"Instrument Serif",Georgia,serif;--display:"Noto Serif",Georgia,serif;
+  --body:"Plus Jakarta Sans",-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}

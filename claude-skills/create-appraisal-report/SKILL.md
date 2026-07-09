@@ -40,14 +40,17 @@ time (cover · summary · comparables with a value number-line), swappable desig
    (each: ref, address, beds/baths/cars, price, date, relation = Comparable|Superior|
    Inferior, image; mark the anchor comp `"anchor": true`).
 
-4. **Render.**
+4. **Render.** The renderer is bundled **inside this skill**, in `report-assets/`
+   (next to this SKILL.md). Write your `<data>.json` there, then run:
    ```bash
-   cd brand/report-assets
+   cd "$(dirname "$0")/report-assets"   # the report-assets folder inside this skill
    python3 render.py <data>.json --theme <theme> --out ~/Documents/Claude/<name>.pdf
    ```
    The script fills the template, builds the comp cards + number-line, inlines all
-   images (self-contained PDF), injects the theme, and prints via headless Chrome.
-   It polls for the finished PDF, so it won't hang on web-font loading.
+   images (self-contained PDF), injects the theme, and prints via headless Chrome
+   (`/Applications/Google Chrome.app`). It polls for the finished PDF, so it won't
+   hang on web-font loading. Copy `report-assets/example-11-apollo.json` as your
+   starting template for the data file.
 
 5. **Deliver.** Report the PDF path and `open` it. If Chrome fails, the sibling `.html`
    opens in any browser and prints to PDF with the real fonts.

@@ -1,0 +1,107 @@
+<body>
+
+<!-- ===== PAGE 1 — COVER ===== -->
+<section class="page cover">
+  <div class="topstrip"><div class="logo">{{BRAND_NAME}}<b>{{BRAND_SUB}}</b></div></div>
+  <div class="hero" style="background-image:url('{{IMG_SUBJECT}}')"></div>
+  <div class="band">
+    <div class="k">{{KICKER}}</div>
+    <h1>{{TITLE}}</h1>
+    <div class="rule"></div>
+    <div class="caddr">{{ADDRESS}}</div>
+    <div class="date">Appraisal date &nbsp;·&nbsp; <b>{{DATE}}</b></div>
+  </div>
+</section>
+
+<!-- ===== PAGE 2 — SUMMARY ===== -->
+<section class="page">
+ <div class="pad">
+  <div class="eyebrow">{{KICKER}}</div>
+  <div class="addr" style="margin:6px 0 4px">{{ADDRESS}}</div>
+
+  <div class="photos">
+    <img class="big" src="{{IMG_SUBJECT}}" alt="">
+    <!--PHOTO_THUMBS-->
+  </div>
+
+  <div class="metaband">
+    <div class="row"><span>Prepared for</span><b>{{PREPARED_FOR}}</b></div>
+    <div class="row"><span>Prepared by</span><b>{{PREPARED_BY}}</b></div>
+    <div class="row"><span>Purpose</span><b>{{PURPOSE}}</b></div>
+    <div class="row"><span>Skill</span><b>property-appraisal</b></div>
+    <div class="row"><span>Appraisal date</span><b>{{DATE}}</b></div>
+    <div class="row"><span>Method</span><b>Direct comparison</b></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="subhead">Appraisal Details</div>
+      <div class="valrow"><span class="l">Indicative Value · Most Likely</span><span class="v">{{VALUE_MID}}</span></div>
+      <div class="kv">
+        <div class="row"><span>Range</span><b>{{VALUE_RANGE}}</b></div>
+        <div class="row"><span>Appraisal date</span><b>{{DATE}}</b></div>
+        <div class="row"><span>Last sale</span><b>{{LAST_SALE}}</b></div>
+        <div class="row"><span>AVM cross-check</span><b>{{AVM}}</b></div>
+      </div>
+
+      <div class="subhead" style="margin-top:14px">Subject Property Summary</div>
+      <div class="icons">
+        <div class="ic"><svg class="ib" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>{{TYPE}}</div>
+        <div class="ic"><svg class="ib" viewBox="0 0 24 24"><path d="M3 12h18M5 12V8a2 2 0 0 1 2-2h3v6M3 12v5m18-5v5"/></svg>{{BEDS}}</div>
+        <div class="ic"><svg class="ib" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM7 12V6a2 2 0 0 1 4 0"/></svg>{{BATHS}}</div>
+        <div class="ic"><svg class="ib" viewBox="0 0 24 24"><path d="M5 13l1.5-5h11L19 13M5 13h14v4H5zM7 17v2M17 17v2"/></svg>{{CARS}}</div>
+        <div class="ic"><svg class="ib" viewBox="0 0 24 24"><path d="M12 3v4M8 5l1 3M16 5l-1 3M4 21h16M6 21V11h12v10"/></svg>{{HIGHLIGHT}}</div>
+      </div>
+      <div class="kv">
+        <div class="row"><span>Living area</span><b>{{LIVING}}</b></div>
+        <div class="row"><span>Land area</span><b>{{LAND}}</b></div>
+        <div class="row"><span>Title</span><b>{{TITLE_REF}}</b></div>
+        <div class="row"><span>LGA</span><b>{{LGA}}</b></div>
+        <div class="row"><span>Zoning</span><b>{{ZONING}}</b></div>
+        <div class="row"><span>Improvements</span><b>{{IMPROVEMENTS}}</b></div>
+        <div class="row"><span>Car accom.</span><b>{{CAR_ACCOM}}</b></div>
+      </div>
+    </div>
+
+    <div class="reason">
+      <div class="subhead">Appraisal Approach &amp; Reasoning</div>
+      <!--REASON-->
+      <p style="color:var(--ink-faint);font-size:11.5px">Confidence: <b style="color:var(--crimson-deep)">{{CONFIDENCE}}</b>. {{CONFIDENCE_NOTE}}</p>
+      <div class="sig">{{SIGNATURE}}</div>
+      <div class="sigline">Indicative appraisal · not a certified valuation</div>
+    </div>
+  </div>
+ </div>
+ <div class="foot"><span class="brand">{{FOOTER_BRAND}}</span><span>Indicative — not a certified valuation</span><span>Page 2 of 3</span></div>
+</section>
+
+<!-- ===== PAGE 3 — COMPARABLES ===== -->
+<section class="page">
+ <div class="pad">
+  <h2>Comparable Sales Evidence</h2>
+
+  <div class="scalebox">
+    <div class="scale">
+      <div class="ticks"><!--SCALE_TICKS--></div>
+      <div class="track"><!--SCALE_DOTS--></div>
+    </div>
+    <div class="legend">
+      <div class="lr"><span><i class="lg" style="background:var(--crimson)"></i>Indicative value</span><b>{{VALUE_MID}}</b></div>
+      <div class="lr"><span><i class="lg" style="background:var(--char)"></i>Likely range</span><b>{{VALUE_RANGE}}</b></div>
+      <div class="lr"><span><i class="lg" style="background:var(--paper);border:1.4px solid var(--ink-faint)"></i>Comparable sales</span><b>{{COMPS_SUMMARY}}</b></div>
+    </div>
+  </div>
+
+  <div class="cgrid"><!--COMP_CARDS--></div>
+
+  <p class="note">{{COMPS_NOTE}}</p>
+
+  <div class="disc">
+    <h3>What this report is not</h3>
+    <p>An indicative, comparable-sales-based appraisal for research and preparation only. It is not a certified valuation and cannot be relied on for lending, purchase, sale, taxation (including CGT), legal or family-law purposes — those require a Certified Practising Valuer (CPV / API) or RICS registered valuer. All figures are estimates from the comparable evidence shown and require independent verification. Not financial, credit, tax, legal or investment advice.</p>
+  </div>
+ </div>
+ <div class="foot"><span class="brand">{{FOOTER_BRAND}}</span><span>Indicative — not a certified valuation</span><span>Page 3 of 3</span></div>
+</section>
+
+</body></html>

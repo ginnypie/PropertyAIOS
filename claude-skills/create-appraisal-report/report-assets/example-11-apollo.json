@@ -1,0 +1,39 @@
+{
+  "address": "11 Apollo Quay, Trinity Park QLD 4879",
+  "date": "9 Jul 2026",
+  "prepared_for": "John Graham",
+  "purpose": "Research / underwrite",
+  "image": "https://i2.au.reastatic.net/1200x760-crop,progressive/50c3c0040802b4203c5c01fccc45c3b2fc312f895ec11d9759d58eae0b1e30ca/main.jpg",
+
+  "value_mid": 1620000,
+  "range_low": 1500000,
+  "range_high": 1750000,
+  "last_sale": "$1,100,000 (Sep 2021)",
+  "avm": "$1.62m (PropTrack)",
+
+  "type": "House", "beds": 5, "baths": 3, "cars": 2, "highlight": "Waterfront",
+  "living": "~300 m²", "land": "600 m²", "title_ref": "Lot 98 SP165903",
+  "lga": "Cairns Regional", "zoning": "Residential",
+  "improvements": "Pool · Solar · A/C", "car_accom": "Double garage",
+
+  "reasoning": [
+    "This appraisal uses the <em>direct comparison</em> approach against recent waterfront sales in the Bluewater Marina canal estate. Figures are indicative and rely on the comparable evidence shown overleaf being correct.",
+    "The anchor is <b>12 Apollo Quay</b> — same street, same 600 m² land — sold <b>$1.60m (Aug 2025)</b>. The estate brackets the subject: a floor at 54 Harbour Drive ($1.30m, identical 5/3/2 but weaker) and 46 Marina ($1.50m); a ceiling at 9 Marina ($1.80m) and the larger 121 Harbour ($1.92m).",
+    "The fifth bedroom and pool lift the subject above the $1.5m comps; an unconfirmed interior and unproven marina berth hold it below the $1.8m+ reads. Land-rate check: $1.62m ÷ 600 m² ≈ <b>$2,700/m²</b>, matching both 12 Apollo Quay and the AVM. Same-street comp, estate cluster and AVM all converge near <em>$1.6m</em>."
+  ],
+  "confidence": "Medium–High",
+  "confidence_note": "To sharpen: confirm interior condition, confirm marina berth/pontoon, and pull the Cairns council flood / storm-tide overlay (portal auto-flag is unreliable for canal blocks).",
+  "signature": "PropertyAIOS",
+
+  "comps_summary": "6 waterfront · <12 mo",
+  "comps_note": "Asking-price context (not sales, not weighted): 8 Apollo Quay $2.0m · 9 Apollo Quay $2.495m · 14 Marina Quay $1.975m · 1 Apollo Quay $3.25m. Sources: realestate.com.au · property.com.au · onthehouse.com.au. Images are public listing photos, shown for research identification only.",
+
+  "comparables": [
+    {"ref":"A","address":"12 Apollo Quay, Trinity Park","beds":4,"baths":2,"cars":2,"price":1600000,"date":"Aug 2025","line2_label":"Same street","line2":"600 m² · ~50 m","relation":"Comparable","anchor":true,"image":"https://i2.au.reastatic.net/640x400-crop,progressive/7dcdccf01dcb5d7254f296ffeab245cd54b904ca18981474ea2396bfe8080baa/main.jpg"},
+    {"ref":"B","address":"9 Marina Quay, Trinity Park","beds":4,"baths":3,"cars":2,"price":1800000,"date":"mid-2025","line2_label":"Waterfront","line2":"Marina canal","relation":"Superior","image":"https://i2.au.reastatic.net/640x400-crop,progressive/a655ad2e3d705bd4428a1c24455bc9fcd781b8c7a99daf52dc4e61691e71b55a/main.jpg"},
+    {"ref":"C","address":"46 Marina Quay, Trinity Park","beds":4,"baths":3,"cars":3,"price":1500000,"date":"mid-2025","line2_label":"Waterfront","line2":"Marina canal","relation":"Comparable","image":"https://i2.au.reastatic.net/640x400-crop,progressive/7b4e897f8c07292794ffdf75ad3118ab0e0048fac961909565acae35cbc3d4cc/main.jpg"},
+    {"ref":"D","address":"121 Harbour Drive, Trinity Park","beds":4,"baths":3,"cars":3,"price":1920000,"date":"Apr 2026","line2_label":"Land","line2":"695 m² · premium","relation":"Superior","image":"https://i2.au.reastatic.net/640x400-crop,progressive/9628edc1f2a71e107d7ba3f3fb1e0c9a8a5606128d3edafbc72ab2403d2e307c/main.jpg"},
+    {"ref":"E","address":"54 Harbour Drive, Trinity Park","beds":5,"baths":3,"cars":2,"price":1300000,"date":"Aug 2025","line2_label":"Config","line2":"Same 5/3/2 · weaker","relation":"Inferior","image":"https://i2.au.reastatic.net/640x400-crop,progressive/186337a434e7397fa4afa5bf84dc714aa7f6912e99301395d8ccacf1e0661687/main.jpg"},
+    {"ref":"F","address":"42 Marina Quay, Trinity Park","beds":3,"baths":2,"cars":2,"price":1380000,"date":"Dec 2025","line2_label":"Size","line2":"Smaller footprint","relation":"Inferior","image":"https://i2.au.reastatic.net/640x400-crop,progressive/74221be0c77153c50efd64ddb1bd763d0985ccce95f6d003918559975fe8a099/main.jpg"}
+  ]
+}
