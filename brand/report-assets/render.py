@@ -143,6 +143,7 @@ def build(data, theme):
     }
     for k, v in tok.items():
         body = body.replace("{{" + k + "}}", str(v))
+        head = head.replace("{{" + k + "}}", str(v))   # title etc. live in <head>
 
     return head + "\n" + body
 
