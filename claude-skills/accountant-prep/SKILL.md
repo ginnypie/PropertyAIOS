@@ -104,7 +104,7 @@ Flag for accountant discussion:
 4. "Is there any plant and equipment I can depreciate from settlement — whitegoods, carpet, blinds?"
 
 **About capital gains:**
-5. "If I sell in [X years], what is the estimated CGT position? Does the 50% CGT discount apply? What is my cost base?"
+5. "If I sell in [X years], what is the estimated CGT position for that disposal year — under the current-year rules — and what is my cost base?" (Note: the CGT discount is mid-reform; from 1 July 2027 indexation + a 30% minimum tax replace the 50% discount for individuals/trusts. Ask which regime applies to your likely sale date.)
 6. "Are there any proposed changes to the CGT discount I should be aware of, and how would they affect my position if they become law? Please confirm the current status of any proposed legislation."
 
 **About ownership structure:**

@@ -106,8 +106,11 @@ An **indicative, conservative** read on borrowing/serviceability for this purcha
 *Indicative only — not a borrowing-capacity assessment and not credit advice. Verify with a licensed mortgage broker (ACL holder).*
 
 ### 6. THE ACCOUNTANT — TAX
-Tax **flags** only: CGT discount eligibility (12-month hold), holding-period and ownership-structure considerations, negative-gearing position (deficit or not), land-tax threshold exposure in the relevant state, and depreciation potential (new/renovated). No calculated figures.
-*Flags for discussion, not tax advice. Verify with a registered tax agent; land-tax thresholds vary by state and change.*
+Tax **flags** only: CGT-discount eligibility, the negative-gearing position (deficit or not), holding-period and ownership-structure considerations, land-tax threshold exposure in the relevant state, and depreciation potential (new/renovated). No calculated figures.
+
+> **Reform in play — do not state old rules as permanent (verify the current-year treatment).** Australia's 2026 Budget legislated major change from **1 July 2027**: the 50% CGT discount is replaced by cost-base indexation plus a 30% minimum tax (individuals/trusts, not companies/super), and negative gearing is limited to new builds — an **established** dwelling acquired **after 7:30pm AEST 12 May 2026** loses negative gearing (losses quarantine to property income, carried forward). Dwellings bought **before 12 May 2026**, and **new builds**, are unaffected. Until **30 June 2027** the existing rules still apply. So: flag the **purchase date vs 12 May 2026** and **new vs established**, and send the taxpayer to a registered tax agent for the current-year rules — never assert the historical "50% discount / deductible against all income" as fixed.
+
+*Flags for discussion, not tax advice. Verify with a registered tax agent; CGT and negative-gearing rules are mid-reform (above) and land-tax thresholds vary by state.*
 
 ### 7. THE COMMITTEE VERDICT
 A single, decision-ready synthesis:
