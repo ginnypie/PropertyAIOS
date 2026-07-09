@@ -6,7 +6,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 @page{size:A4;margin:0}
 html,body{background:#fff;width:100%}
-body{font-family:var(--body);color:var(--ink-body);font-size:13px;line-height:1.55;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;align-items:center}
+@media screen{
+  html,body{background:#e6e6e6}
+  .page{margin:16px auto;box-shadow:0 3px 16px rgba(0,0,0,.18)}
+}
+body{font-family:var(--body);color:var(--ink-body);font-size:13px;line-height:1.55;-webkit-font-smoothing:antialiased}
 em{font-family:var(--serif);font-style:italic;color:var(--crimson);font-size:1.05em}
 .page{width:210mm;height:297mm;background:var(--paper);position:relative;overflow:hidden;page-break-after:always;break-after:page;margin:0 auto}
 .page:last-child{page-break-after:auto;break-after:auto}
