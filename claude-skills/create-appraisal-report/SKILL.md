@@ -1,6 +1,6 @@
 ---
 name: create-appraisal-report
-description: Use to turn a property address into a beautifully designed appraisal-report PDF. Runs the property-appraisal analysis, then renders it in a chosen brand theme (66days | harbour | noir). Trigger on "make an appraisal report", "appraisal PDF", "valuation report for <address>".
+description: Use to turn a property address into a beautifully designed appraisal-report PDF. Runs the property-appraisal analysis, then renders it in a chosen brand theme (66days | harbour | noir). Trigger on "make an appraisal report", "appraisal PDF", "valuation report for an address".
 ---
 
 # Skill — Create Appraisal Report (themed PDF)
@@ -13,15 +13,15 @@ time (cover · summary · comparables with a value number-line), swappable desig
 ---
 
 ## What it is / is NOT
-- ✅ A presentation layer over the `property-appraisal` skill — indicative, comparable-sales based.
-- ❌ NOT a certified valuation. The report carries that disclaimer; keep it.
-- ❌ Never invents comps, prices or dates. Every figure comes from `property-appraisal`
+- A presentation layer over the `property-appraisal` skill — indicative, comparable-sales based.
+- NOT a certified valuation. The report carries that disclaimer; keep it.
+- Never invents comps, prices or dates. Every figure comes from `property-appraisal`
   (which uses only supplied or genuinely looked-up sold data).
 
 ## Inputs
 - **Address** (required).
 - **Theme** (optional, default `66days`): `66days` (crimson/cream), `harbour` (navy/teal),
-  `noir` (charcoal/oxblood), or any file in `brand/report-assets/themes/`.
+  `noir` (charcoal/oxblood), or any file in the bundled `report-assets/themes/` folder.
 - **Client name / purpose** (optional).
 
 ## Steps
@@ -32,48 +32,48 @@ time (cover · summary · comparables with a value number-line), swappable desig
 
 2. **Gather images — REQUIRED, do not skip.** Every comparable and the subject MUST
    have a real photo URL, or the report renders with empty grey boxes. Reliable method:
-   for each property, open its **Domain property-profile** page
-   `https://www.domain.com.au/property-profile/<number>-<street>-<suburb>-<state>-<postcode>`
-   (e.g. `.../9-grimes-place-davidson-nsw-2085`) and take the **`og:image`** meta URL —
-   that is the hero listing photo (a `rimh2.domainstatic.com.au/...` link). realestate.com.au
-   (`i2.au.reastatic.net`) and agent-site photos work too. Use your web/fetch tool to read
-   the page and copy the `og:image`. Put one URL in each comp's `image` field and in the
-   top-level `image` (subject). The renderer downloads and inlines them (jpeg/png/webp all
-   handled). If a property genuinely has no photo, use its street-view or leave `""` — but
-   never leave the whole set empty. These are public listing photos, for research ID only.
+   for each property, open its Domain property-profile page. The URL pattern is
+   `https://www.domain.com.au/property-profile/` followed by the address as a slug —
+   number-street-suburb-state-postcode, e.g. `9-grimes-place-davidson-nsw-2085`. On that
+   page take the `og:image` meta URL — that is the hero listing photo (a
+   `rimh2.domainstatic.com.au/...` link). realestate.com.au (`i2.au.reastatic.net`) and
+   agent-site photos work too. Use your web/fetch tool to read the page and copy the
+   `og:image`. Put one URL in each comp's `image` field and in the top-level `image`
+   (subject). The renderer downloads and inlines them (jpeg/png/webp all handled). If a
+   property genuinely has no photo, use its street-view or leave it as an empty string —
+   but never leave the whole set empty. Public listing photos, for research ID only.
 
-3. **Write a data file.** Fill a JSON like `brand/report-assets/example-11-apollo.json`
-   with the appraisal output: `address`, `date`, value fields, subject summary, an array
-   of `reasoning` paragraphs (may contain `<em>`/`<b>`), and the `comparables` array
-   (each: ref, address, beds/baths/cars, price, date, relation = Comparable|Superior|
-   Inferior, image; mark the anchor comp `"anchor": true`).
+3. **Write a data file.** Copy `report-assets/example-11-apollo.json` and fill it with the
+   appraisal output: `address`, `date`, value fields, subject summary, an array of
+   `reasoning` paragraphs (simple emphasis markup is allowed), and the `comparables` array
+   (each: ref, address, beds/baths/cars, price, date, relation = Comparable | Superior |
+   Inferior, image; mark the anchor comp with `"anchor": true`).
 
-4. **Render.** The renderer is bundled **inside this skill**, in `report-assets/`
-   (next to this SKILL.md). Write your `<data>.json` there, then run:
+4. **Render.** The renderer is bundled inside this skill, in the `report-assets/` folder
+   next to this SKILL.md. Save your data file there (for example `report.json`), then run:
    ```bash
-   cd "$(dirname "$0")/report-assets"   # the report-assets folder inside this skill
-   python3 render.py <data>.json --theme <theme> --out ~/Documents/Claude/<name>.pdf
+   cd "$(dirname "$0")/report-assets"
+   python3 render.py report.json --theme 66days --out ~/Documents/Claude/appraisal.pdf
    ```
-   The script fills the template, builds the comp cards + number-line, inlines all
-   images (self-contained PDF), injects the theme, and prints via headless Chrome
-   (`/Applications/Google Chrome.app`). It polls for the finished PDF, so it won't
-   hang on web-font loading. Copy `report-assets/example-11-apollo.json` as your
-   starting template for the data file.
+   Swap `report.json`, the `--theme` value, and the `--out` path for your own. The script
+   fills the template, builds the comp cards + number-line, inlines all images
+   (self-contained PDF), injects the theme, and prints via headless Chrome / Chromium /
+   Edge (auto-detected on Mac, Windows or Linux). It polls for the finished PDF, so it
+   won't hang on web-font loading.
 
-5. **Deliver.** Report the PDF path and `open` it. If Chrome fails, the sibling `.html`
-   opens in any browser and prints to PDF with the real fonts.
+5. **Deliver.** Report the PDF path and open it. If no browser engine is found, the
+   sibling `.html` opens in any browser and prints to PDF with the real fonts and images.
 
 ## Adding a person / brand
-Drop a new token file in `brand/report-assets/themes/<name>.css` (copy an existing one,
-change the `:root` values + font `@import`). It's instantly selectable via `--theme <name>`.
+Drop a new token file in `report-assets/themes/` (copy an existing one, change the
+`:root` values + font import). It is instantly selectable via the `--theme` flag.
 
-## Files
-- `brand/report-assets/render.py` — the renderer
-- `brand/report-assets/master.template.html` — layout (has the `/*__THEME__*/` slot)
-- `brand/report-assets/report.body.template.html` — tokenized body
-- `brand/report-assets/themes/*.css` — the designs
-- `brand/report-assets/example-11-apollo.json` — worked example (11 Apollo Quay)
-- `brand/report-style.md` — the layout spec
+## Files (all bundled in report-assets/)
+- `render.py` — the renderer
+- `master.template.html` — layout (has the theme slot)
+- `report.body.template.html` — tokenized body
+- `themes/` — the designs (66days, harbour, noir)
+- `example-11-apollo.json` — worked example (11 Apollo Quay)
 
 ## Disclaimer
 Indicative appraisal for research and preparation only — not a certified valuation. A
