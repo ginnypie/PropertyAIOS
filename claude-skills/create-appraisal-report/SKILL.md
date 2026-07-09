@@ -53,16 +53,23 @@ time (cover · summary · comparables with a value number-line), swappable desig
    next to this SKILL.md. Save your data file there (for example `report.json`), then run:
    ```bash
    cd "$(dirname "$0")/report-assets"
-   python3 render.py report.json --theme 66days --out ~/Documents/Claude/appraisal.pdf
+   python3 render.py report.json --theme 66days --out ./appraisal.pdf
    ```
    Swap `report.json`, the `--theme` value, and the `--out` path for your own. The script
-   fills the template, builds the comp cards + number-line, inlines all images
-   (self-contained PDF), injects the theme, and prints via headless Chrome / Chromium /
-   Edge (auto-detected on Mac, Windows or Linux). It polls for the finished PDF, so it
-   won't hang on web-font loading.
+   ALWAYS writes a fully self-contained `.html` first (every image + font embedded), then,
+   **only if** Chrome / Chromium / Edge is already installed, auto-prints the matching PDF.
+   The HTML is the real deliverable — it looks identical to the PDF and needs nothing else.
 
-5. **Deliver.** Report the PDF path and open it. If no browser engine is found, the
-   sibling `.html` opens in any browser and prints to PDF with the real fonts and images.
+   **Do NOT install a browser, Playwright, Chromium, wkhtmltopdf, or any other engine.**
+   If none is found the script says so and stops after the HTML — that is the expected,
+   successful outcome, not an error. Downloading a browser is slow and unnecessary.
+
+5. **Deliver — works on any OS.** Save the `.html` (and the `.pdf` if one was produced)
+   somewhere the person can find it — their Documents folder, or the folder they ran this
+   from. Then tell them: **open the `.html` in any web browser and choose Print → Save as
+   PDF.** That Print-to-PDF option is built into every browser on Windows, macOS and Linux
+   (Chrome, Edge, Firefox, Safari) — no software to install. The fonts and property photos
+   are already embedded, so the printed PDF is pixel-identical to the report.
 
 ## Adding a person / brand
 Drop a new token file in `report-assets/themes/` (copy an existing one, change the
