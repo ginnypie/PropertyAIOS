@@ -49,6 +49,22 @@ time (cover · summary · comparables with a value number-line), swappable desig
    (each: ref, address, beds/baths/cars, price, date, relation = Comparable | Superior |
    Inferior, image; mark the anchor comp with `"anchor": true`).
 
+   **Do NOT set brand fields in the data file** — `brand_name`, `brand_sub`,
+   `footer_brand` and `signature` are chosen automatically by `--theme` so the header,
+   footer and signature always match. Leave them out; picking the theme is how you brand
+   the report. (Only set them by hand if you deliberately want a one-off custom brand.)
+
+   **Carry the government-sourced provenance through** (this is what beats "powered by
+   CoreLogic" on trust — see the `property-appraisal` output and its
+   `references/au-property-data-sources.md`):
+   - `avm` — show the value cross-check AND the primary anchor, e.g.
+     `"$2.27m (Domain AVM) · sales confirmed vs NSW VG register"`.
+   - each comparable's `line2`/label may note `✓ VG` when its price+date are register-confirmed.
+   - `comps_note` — list the real sources (VG register / Queensland Globe / Domain) with
+     the sold data, and, when a rental estimate is included, the **bond-median** anchor and
+     quarter, e.g. `"Rent est. $1,380/wk — anchored on QLD RTA median (Palm Cove, houses, Q2 2026), adjusted vs current listings."`
+   Never invent a source; only cite what was actually pulled.
+
 4. **Render.** The renderer is bundled inside this skill, in the `report-assets/` folder
    next to this SKILL.md. Save your data file there (for example `report.json`), then run:
    ```bash
@@ -72,8 +88,12 @@ time (cover · summary · comparables with a value number-line), swappable desig
    are already embedded, so the printed PDF is pixel-identical to the report.
 
 ## Adding a person / brand
-Drop a new token file in `report-assets/themes/` (copy an existing one, change the
-`:root` values + font import). It is instantly selectable via the `--theme` flag.
+Two steps for a new brand:
+1. Drop a new token file in `report-assets/themes/` (copy an existing one, change the
+   `:root` values + font import). It is instantly selectable via the `--theme` flag.
+2. Add a matching entry to `THEME_BRANDS` in `render.py` (`brand_name`, `brand_sub`,
+   `footer_brand`, `signature`) so the report's header, footer and signature all carry the
+   new brand name. Without this the new theme falls back to the 66days brand text.
 
 ## Files (all bundled in report-assets/)
 - `render.py` — the renderer

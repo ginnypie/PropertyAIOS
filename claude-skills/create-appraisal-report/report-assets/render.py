@@ -63,6 +63,21 @@ def money(n):
         return n
     return f"${n/1_000_000:.2f}m"
 
+# Brand identity is a property of the THEME, not the per-report data. This keeps the
+# header, footer and signature in sync so one report can never show three different brand
+# names (e.g. a "66 Days to Property" header with a stray "Cowork Property Appraisal"
+# signature). A data JSON may still override any field, but by default the whole report
+# speaks with one voice chosen by --theme. Add an entry here when you add a theme.
+THEME_BRANDS = {
+    "66days":  {"brand_name": "66 Days to Property", "brand_sub": "PROPERTYAIOS",
+                "footer_brand": "66 DAYS TO PROPERTY", "signature": "66 Days to Property"},
+    "harbour": {"brand_name": "Harbour Property",    "brand_sub": "PROPERTYAIOS",
+                "footer_brand": "HARBOUR PROPERTY",   "signature": "Harbour Property"},
+    "noir":    {"brand_name": "PropertyAIOS",         "brand_sub": "APPRAISAL",
+                "footer_brand": "PROPERTYAIOS",        "signature": "PropertyAIOS"},
+}
+DEFAULT_BRAND = THEME_BRANDS["66days"]
+
 def build(data, theme):
     head = (HERE / "master.template.html").read_text()
     head = head[:head.index("</head>") + len("</head>")]
@@ -115,10 +130,13 @@ def build(data, theme):
     body = body.replace("<!--REASON-->", reason)
 
     # ---- scalar tokens ----
+    # Brand fields default from the theme (see THEME_BRANDS) so header, footer and
+    # signature always match; a data JSON only overrides them if deliberately set.
+    brand = THEME_BRANDS.get(theme, DEFAULT_BRAND)
     tok = {
-        "BRAND_NAME": data.get("brand_name", "66 Days to Property"),
-        "BRAND_SUB": data.get("brand_sub", "PROPERTYAIOS"),
-        "FOOTER_BRAND": data.get("footer_brand", "66 DAYS TO PROPERTY"),
+        "BRAND_NAME": data.get("brand_name", brand["brand_name"]),
+        "BRAND_SUB": data.get("brand_sub", brand["brand_sub"]),
+        "FOOTER_BRAND": data.get("footer_brand", brand["footer_brand"]),
         "KICKER": data.get("kicker", "Indicative Market Appraisal"),
         "TITLE": data.get("title", "Market Appraisal<br>Report"),
         "ADDRESS": data["address"], "DATE": data["date"],
@@ -137,7 +155,7 @@ def build(data, theme):
         "CAR_ACCOM": data.get("car_accom", "—"),
         "CONFIDENCE": data.get("confidence", "Medium"),
         "CONFIDENCE_NOTE": data.get("confidence_note", ""),
-        "SIGNATURE": data.get("signature", "PropertyAIOS"),
+        "SIGNATURE": data.get("signature", brand["signature"]),
         "COMPS_SUMMARY": data.get("comps_summary", f"{len(comps)} sales"),
         "COMPS_NOTE": data.get("comps_note", ""),
     }

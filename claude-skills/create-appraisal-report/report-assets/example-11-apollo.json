@@ -9,7 +9,7 @@
   "range_low": 1500000,
   "range_high": 1750000,
   "last_sale": "$1,100,000 (Sep 2021)",
-  "avm": "$1.62m (PropTrack)",
+  "avm": "$1.62m (PropTrack AVM) · sales cross-checked vs QLD Globe",
 
   "type": "House", "beds": 5, "baths": 3, "cars": 2, "highlight": "Waterfront",
   "living": "~300 m²", "land": "600 m²", "title_ref": "Lot 98 SP165903",
@@ -23,10 +23,9 @@
   ],
   "confidence": "Medium–High",
   "confidence_note": "To sharpen: confirm interior condition, confirm marina berth/pontoon, and pull the Cairns council flood / storm-tide overlay (portal auto-flag is unreliable for canal blocks).",
-  "signature": "PropertyAIOS",
 
   "comps_summary": "6 waterfront · <12 mo",
-  "comps_note": "Asking-price context (not sales, not weighted): 8 Apollo Quay $2.0m · 9 Apollo Quay $2.495m · 14 Marina Quay $1.975m · 1 Apollo Quay $3.25m. Sources: realestate.com.au · property.com.au · onthehouse.com.au. Images are public listing photos, shown for research identification only.",
+  "comps_note": "Sale prices cross-checked against the QLD land titles register via Queensland Globe; Domain/realestate.com.au used for attributes and photos. Rent est. $760/wk — anchored on QLD RTA median (Trinity Park, houses, Q2 2026), adjusted vs current listings. Asking-price context (not sales, not weighted): 8 Apollo Quay $2.0m · 9 Apollo Quay $2.495m · 14 Marina Quay $1.975m · 1 Apollo Quay $3.25m. Images are public listing photos, shown for research identification only.",
 
   "comparables": [
     {"ref":"A","address":"12 Apollo Quay, Trinity Park","beds":4,"baths":2,"cars":2,"price":1600000,"date":"Aug 2025","line2_label":"Same street","line2":"600 m² · ~50 m","relation":"Comparable","anchor":true,"image":"https://i2.au.reastatic.net/640x400-crop,progressive/7dcdccf01dcb5d7254f296ffeab245cd54b904ca18981474ea2396bfe8080baa/main.jpg"},
