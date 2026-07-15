@@ -30,20 +30,16 @@ time (cover · summary · comparables with a value number-line), swappable desig
    produces the value range, subject attributes, and the comparable-sales table — the
    real, sourced data. Do not proceed with invented numbers.
 
-2. **Gather images — REQUIRED, do not skip.** Every comparable and the subject MUST
-   have a real photo URL, or the report renders with empty grey boxes. Reliable method:
-   for each property, open its Domain property-profile page. The URL pattern is
-   `https://www.domain.com.au/property-profile/` followed by the address as a slug —
-   number-street-suburb-state-postcode, e.g. `9-grimes-place-davidson-nsw-2085`. On that
-   page take the `og:image` meta URL — that is the hero listing photo (a
-   `rimh2.domainstatic.com.au/...` link). realestate.com.au (`i2.au.reastatic.net`) and
-   agent-site photos work too. Use your web/fetch tool to read the page and copy the
-   `og:image`. Put one URL in each comp's `image` field and in the top-level `image`
-   (subject). The renderer downloads and inlines them (jpeg/png/webp all handled). If a
-   property genuinely has no photo, use its street-view or leave it as an empty string —
-   but never leave the whole set empty. Public listing photos, for research ID only.
+2. **Photos — OPTIONAL and user-supplied. Do NOT scrape listing/portal photos.**
+   The report renders fine without any photos (empty `image` fields show a neutral
+   placeholder). Portal terms (Domain / realestate.com.au) prohibit harvesting their
+   images, and listing photos are copyright — so this tool must never collect them, and
+   must never instruct a user to. Only include a photo the **user has supplied and has the
+   right to use** (their own photo of their own property, or an agent-provided image with
+   permission). Put any such image path/URL in the comp's or subject's `image` field;
+   otherwise leave it an empty string `""`. Never auto-fetch photos from a listing.
 
-3. **Write a data file.** Copy `report-assets/example-11-apollo.json` and fill it with the
+3. **Write a data file.** Copy `report-assets/example-sample.json` and fill it with the
    appraisal output: `address`, `date`, value fields, subject summary, an array of
    `reasoning` paragraphs (simple emphasis markup is allowed), and the `comparables` array
    (each: ref, address, beds/baths/cars, price, date, relation = Comparable | Superior |
@@ -100,7 +96,7 @@ Two steps for a new brand:
 - `master.template.html` — layout (has the theme slot)
 - `report.body.template.html` — tokenized body
 - `themes/` — the designs (66days, harbour, noir)
-- `example-11-apollo.json` — worked example (11 Apollo Quay)
+- `example-sample.json` — worked example (fictional property; photos left blank)
 
 ## Disclaimer
 Indicative appraisal for research and preparation only — not a certified valuation. A

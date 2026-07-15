@@ -1,0 +1,38 @@
+{
+  "address": "10 Sample Street, Exampleton NSW 2000",
+  "date": "1 Jan 2026",
+  "prepared_for": "Sample Client",
+  "purpose": "Research / preparation",
+  "image": "",
+
+  "value_mid": 1500000,
+  "range_low": 1400000,
+  "range_high": 1600000,
+  "last_sale": "$900,000 (Jun 2019)",
+  "avm": "$1.5m — comparable-sales estimate, cross-checked vs the state government sales register",
+
+  "type": "House", "beds": 4, "baths": 2, "cars": 2, "highlight": "Renovated",
+  "living": "180 m²", "land": "600 m²", "title_ref": "verify",
+  "lga": "Sample Council", "zoning": "Residential",
+  "improvements": "Pool · Solar", "car_accom": "Double garage",
+
+  "reasoning": [
+    "ILLUSTRATIVE EXAMPLE ONLY — a fictional property and fictional sales, to show the report layout. In a real run every figure comes from sales you supply or genuinely look up. This skill never invents a sale.",
+    "The direct-comparison read brackets the subject between a weaker nearby sale (the floor) and a superior renovated home (the ceiling), then cross-checks a land rate. The subject sits toward the middle: renovated, but on a smaller block than the top comps.",
+    "Land-rate check: $1.5m ÷ 600 m² = $2,500/m², in line with the closest comparables. The reads converge near $1.5m."
+  ],
+  "confidence": "Medium",
+  "confidence_note": "To sharpen: confirm interior condition and any recent renovation, verify living area, and check council overlays.",
+
+  "comps_summary": "6 nearby sales (illustrative)",
+  "comps_note": "Illustrative example — fictional property and sales, for layout only. In a real run, sale prices anchor on the state government land-titles register (the Valuer-General); photos are optional and user-supplied (only images you have the right to use).",
+
+  "comparables": [
+    {"ref":"A","address":"12 Sample Street, Exampleton","beds":4,"baths":2,"cars":2,"price":1480000,"date":"Nov 2025","line2_label":"Same street","line2":"600 m² · renovated","relation":"Comparable","anchor":true,"image":""},
+    {"ref":"B","address":"3 Example Avenue, Exampleton","beds":5,"baths":3,"cars":2,"price":1650000,"date":"Oct 2025","line2_label":"Land","line2":"720 m² · superior","relation":"Superior","image":""},
+    {"ref":"C","address":"8 Example Avenue, Exampleton","beds":4,"baths":2,"cars":2,"price":1520000,"date":"Sep 2025","line2_label":"Build","line2":"185 m² · similar","relation":"Comparable","image":""},
+    {"ref":"D","address":"21 Sample Street, Exampleton","beds":5,"baths":3,"cars":3,"price":1720000,"date":"Aug 2025","line2_label":"Size","line2":"210 m² · larger","relation":"Superior","image":""},
+    {"ref":"E","address":"5 Sample Street, Exampleton","beds":3,"baths":1,"cars":1,"price":1300000,"date":"Jul 2025","line2_label":"Config","line2":"Original · weaker","relation":"Inferior","image":""},
+    {"ref":"F","address":"17 Example Avenue, Exampleton","beds":4,"baths":2,"cars":2,"price":1420000,"date":"Jun 2025","line2_label":"Size","line2":"Smaller footprint","relation":"Inferior","image":""}
+  ]
+}

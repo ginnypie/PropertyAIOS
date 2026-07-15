@@ -73,7 +73,7 @@ The quality of the appraisal is capped by the quality of the comparable sales. P
    - **NSW:** free bulk sales register (VG) — automatable cross-check.
    - **QLD:** Queensland Globe (free, manual); paid title for a clean record.
    - **VIC/SA/WA/other:** suburb medians free, per-sale often paid — corroborate on Domain and note the register isn't freely available.
-2. **Corroborate — Domain / realestate.com.au** free "Sold" listings for attributes, photos and speed. A portal "estimate" band is a **cross-check only** — never a sale.
+2. **Corroborate — Domain / realestate.com.au** free "Sold" listings for attributes and recency (never their photos — copyright; photos are user-supplied only). A portal "estimate" band is a **cross-check only** — never a sale.
 3. **Local council** — land value, zoning, planning overlays.
 
 Label every figure with its **source and date**, and keep the **source URL** of each web pull (that URL is the provenance the report shows). Never present a looked-up estimate or an asking price as a confirmed sale price.

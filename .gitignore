@@ -4,3 +4,6 @@
 node_modules/
 dist/
 .cache/
+
+# Personal, non-public notes (never publish)
+**/PRIVATE-*.md
