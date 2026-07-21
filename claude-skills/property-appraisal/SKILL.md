@@ -65,15 +65,18 @@ COMPARABLE SALES: [paste 4–8 recent nearby sales — address, beds/baths/cars,
 
 ## Data sources — how to get the comparable sales
 
-The quality of the appraisal is capped by the quality of the comparable sales. Pull recent (ideally < 6 months), nearby, similar sold properties from:
+The quality of the appraisal is capped by the quality of the comparable sales. Pull recent (ideally < 6 months), nearby, similar sold properties.
 
-- **RP Data / CoreLogic** (if you have broker/agent access) — the most complete sold + attribute data
-- **Domain** and **realestate.com.au** — free "Sold" listings; filter by suburb, type, beds, and recency
-- **PropTrack / Pricefinder** — sold history and estimates
-- **State Valuer-General / Land Registry** — official sale records (e.g. NSW Valuer General, VIC Property Sales, QLD)
-- **Local council** — land value, zoning, planning overlays
+**Anchor on the primary government source, corroborate with portals.** Full per-state registry (URLs + access): [references/au-property-data-sources.md](references/au-property-data-sources.md).
 
-Label every figure with its **source and date**. Never present a looked-up estimate as a confirmed sale price. If web lookup tools are available at run time, they may be used to pull public *sold* listings — but a modelled estimate (e.g. a portal "estimate" band) must be labelled as an estimate, never as a sale.
+1. **Sale price + date — anchor = State Valuer-General / land titles register** (the authoritative record; it is where CoreLogic/RP Data and Domain license their sales from). Confirm each comparable's price and date against it, and mark confirmed comps **verified**.
+   - **NSW:** free bulk sales register (VG) — automatable cross-check.
+   - **QLD:** Queensland Globe (free, manual); paid title for a clean record.
+   - **VIC/SA/WA/other:** suburb medians free, per-sale often paid — corroborate on Domain and note the register isn't freely available.
+2. **Corroborate — Domain / realestate.com.au** free "Sold" listings for attributes and recency (never their photos — copyright; photos are user-supplied only). A portal "estimate" band is a **cross-check only** — never a sale.
+3. **Local council** — land value, zoning, planning overlays.
+
+Label every figure with its **source and date**, and keep the **source URL** of each web pull (that URL is the provenance the report shows). Never present a looked-up estimate or an asking price as a confirmed sale price.
 
 ---
 
@@ -116,11 +119,11 @@ Address, type, beds/baths/cars/year, living area, land area, title/zoning/LGA (i
 Condition, storeys, inclusions, notable features. List **positive** value impacts (e.g. water views, pool, solar) and **negative** ones (e.g. main road, flood overlay, powerlines) separately. Each impact flagged "verify."
 
 ### 3. COMPARABLE SALES EVIDENCE
-A table of the comparables used. Never fabricate rows — use only supplied or looked-up sales, each with its source.
+A table of the comparables used. Never fabricate rows — use only supplied or looked-up sales, each with its source. Mark a comp **verified** (✓) once its price + date are confirmed against the state VG / land titles register; otherwise show the portal source.
 
-| # | Address | Beds/Bath/Car | Land / Living m² | Sale price | Sale date | Distance | vs Subject | Source |
+| # | Address | Beds/Bath/Car | Land / Living m² | Sale price | Sale date | Distance | vs Subject | Source (✓ = VG-verified) |
 |---|---|---|---|---|---|---|---|---|
-| A | ... | ... | ... | $... | .../.../... | ...m | Inferior / Comparable / Superior | RP Data / Domain / ... |
+| A | ... | ... | ... | $... | .../.../... | ...m | Inferior / Comparable / Superior | ✓ NSW VG register / Domain (unverified) |
 
 If no comparables were provided or found: state that clearly, produce Sections 1–2 and 6–8, and STOP with the data checklist from "Data sources" above.
 
@@ -138,6 +141,16 @@ State the range plainly, always as a range:
 | Owner / asking estimate | $... | Unverified — supplied |
 
 Label the whole block: *Indicative only — not a certified valuation.*
+
+### 5b. INDICATIVE RENTAL ESTIMATE (include when purpose is refinance / invest / yield)
+Anchor the rent on the **state rental bond authority's median** (achieved rent from lodged bonds — the authoritative source; see [references/au-property-data-sources.md](references/au-property-data-sources.md)), then adjust with comparable current listings for the specific property's size/quality. Never anchor on asking rents alone.
+
+| | Weekly rent | Basis / source |
+|---|---|---|
+| Bond-median anchor | $... | e.g. QLD RTA median, [suburb], [dwelling type], [Q_ 20__] |
+| Adjusted estimate | **$...** | Bond-median adjusted for size/condition vs current listings |
+
+State the source and quarter. Label: *Indicative rental estimate — asking-rent listings are corroboration only.*
 
 ### 6. CONFIDENCE & DATA GAPS
 How many comparables, how recent, how close, how similar → **Confidence: High / Medium / Low** with one line of why. List what's missing that would sharpen it (e.g. internal condition, a formal floor plan, sold data < 3 months).

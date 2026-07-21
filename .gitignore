@@ -4,3 +4,15 @@
 node_modules/
 dist/
 .cache/
+
+# Personal, non-public notes (never publish)
+**/PRIVATE-*.md
+
+# create-appraisal-report: generated report output (regenerable; may contain real addresses).
+# Keep the templates/themes/render script tracked; ignore rendered reports.
+claude-skills/create-appraisal-report/report-assets/appraisal-*.pdf
+claude-skills/create-appraisal-report/report-assets/appraisal-*.html
+!claude-skills/create-appraisal-report/report-assets/*.template.html
+claude-skills/create-appraisal-report/report-assets/img/
+claude-skills/create-appraisal-report/report-assets/report*.json
+!claude-skills/create-appraisal-report/report-assets/example-sample.json
