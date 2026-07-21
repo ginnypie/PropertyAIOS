@@ -62,6 +62,26 @@ State clearly, up front, which inputs were **not** supplied — an absent input 
 
 ---
 
+## Mode: ask first, or rule on the record
+
+The committee runs two ways. Detect which and behave accordingly.
+
+**Interactive (a person is here):** Before ruling, ask **up to 3 questions — and only ones that would flip the verdict** (PROCEED ↔ INVESTIGATE ↔ PASS). Not an intake form. The test for every question: *"if the answer went the other way, would my verdict change?"* If not, don't ask it — the committee works with partial information by design. Typical flip-questions:
+
+- "Is that rent an agent quote or a property-manager estimate?" (moves the whole yield read)
+- "Is this inside a flood/overlay you're already exposed to elsewhere?"
+- "Owner-occupier or investment — because the tax and serviceability lens flips."
+
+Ask the batch once, take the answers, then rule.
+
+**Unattended (running in the Morning Deal Brief line, or the user said "just rule"):** Do **not** stall for input — nobody is awake to answer. Rule on what you have, biasing conservative, and **promote those same flip-questions into the verdict as conditions**:
+
+> `INVESTIGATE — would be PROCEED if the rent is confirmed by a PM and the flood overlay clears.`
+
+Same three questions, two behaviours: a gate when someone's there, a condition list when nobody is. Either way they surface in the verdict's **"What's missing"** line — never as an invented number.
+
+---
+
 ## How the numbers are worked out
 
 This skill **synthesises**; it does not re-derive the deep calculations. Where a figure is needed, use the same conservative logic as the specialist skills and show that it is an estimate:
